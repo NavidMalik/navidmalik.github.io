@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <!-- <link href="testimonials_style.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<style>
+    /* Home Section */
+    #home {
+        position: relative;
+        background-image: url('./images/services-bg-color.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        /* Ensure text color contrasts with background */
+    }
+
+    .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 5px solid #cf1767;
+        /* Keeps the border */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px 5px rgba(207, 23, 103, 0.7);
+        /* Adds glow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition */
+    }
+
+    .profile-image:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 25px 10px rgba(207, 23, 103, 1);
+        /* Enhance glow on hover */
+    }
+
+    .text-content {
+        text-align: left;
+        position: relative;
+    }
+
+    .text-content h2 {
+        color: white;
+    }
+
+    /* Add this to your existing CSS */
+    .typing-container {
+        font-size: 4.0rem;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        color: #cf1767;
+        height: 6.5rem;
+        /* Set a fixed height based on the largest text */
+        display: inline-block;
+    }
+</style>
+<body>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="padding-top: 1.5em;padding-down:1.5em;">
+    <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">My Portfolio</a>
+
+        <!-- Toggle Button for Mobile View -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links and Social Media Icons -->
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <!-- Centered Nav Items -->
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#work-experience">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Social Media Icons -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- Home Section -->
+<section id="home" class="d-flex align-items-center vh-100">
+    <div class="container text-center text-md-start">
+        <div class="row">
+            <div class="col-md-7 d-flex flex-column justify-content-left align-items-left align-self-center text-content">
+                <h1>Hello, I am </h1>
+                <div id="typing-container" class="typing-container"></div>
+                <p>
+                    I am a highly skilled Software Developer, with knowledge of various tools and languages and eager to learn new skills, which I can utilize for the wellbeing of the company.
+                </p>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center image-column">
+                <img src="./images/my_profile.png" alt="Your Image" class="img-fluid rounded-circle profile-image">
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const texts = [
+        "Naveed Malik",
+        "Web Developer",
+        "Mobile App Developer",
+        "React Js Developer",
+        "PHP Developer",
+        "Full Stack Developer"
+    ];
+
+    const typingSpeed = 100; // milliseconds per character
+    const deletingSpeed = 50; // milliseconds per character
+    const pauseBetweenTexts = 1500; // milliseconds between texts
+
+    function typeText(element, text, callback) {
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                element.textContent += text[index++];
+                setTimeout(type, typingSpeed);
+            } else {
+                setTimeout(callback, pauseBetweenTexts);
+            }
+        }
+        type();
+    }
+
+    function deleteText(element, callback) {
+        let text = element.textContent;
+        let index = text.length;
+
+        function deleteChar() {
+            if (index > 0) {
+                element.textContent = text.substring(0, index--);
+                setTimeout(deleteChar, deletingSpeed);
+            } else {
+                element.textContent = ''; // Ensure text is fully cleared
+                setTimeout(callback, pauseBetweenTexts);
+            }
+        }
+        deleteChar();
+    }
+
+    function cycleTexts() {
+        const container = document.getElementById('typing-container');
+        let i = 0;
+
+        function next() {
+            typeText(container, texts[i], () => {
+                deleteText(container, () => {
+                    i = (i + 1) % texts.length; // Move to next text
+                    next(); // Continue animation
+                });
+            });
+        }
+        next();
+    }
+
+    cycleTexts();
+</script>
+
+
+<!-- Home Section -->
+<!-- <section id="home" class="d-flex align-items-center vh-100" style="background-image: url('./images/services-bg-color.jpg'); background-size: cover;">
+    <div class="container text-center text-md-start">
+        <div class="row">
+            <div class="col-md-8 d-flex flex-column justify-content-left align-items-left align-self-center">
+                <h5 style="color:#cf1767">Hello, I'm Naveed Malik</h5>
+                <h1 style="font-size:4.8rem;font-weight:500;">
+                    Web Developer <br />
+                    and Mobile App Developer <br />
+                    Based In<br />
+                    Islamabad.
+                </h1>
+            </div>
+            <div class="col-md-4 d-flex flex-column justify-content-center align-items-center image-column">
+                <img src="./images/my_profile.png" alt="Your Image" class="img-fluid rounded-circle profile-image">
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- About Section -->
+<section id="about" class="s-about py-5">
+    <div class="container">
+        <div class="row heading-block" data-aos="fade-up">
+            <div class="col-lg-12">
+                <h2 class="section-heading">About Me</h2>
+            </div>
+        </div>
+        <div class="row about-me__content" data-aos="fade-up">
+            <div class="col-lg-12 about-me__text">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <p class="lead">
+                            I have a great passion for development and mainly regarding web
+                            and app development. There are many things that make me passionate
+                            about web development.
+                        </p>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5">
+                        <p>
+                            The pace at which the changes are happening, needs continuous
+                            learning, competitiveness among frameworks which is healthy and
+                            brings the best out of them.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <p>
+                            The major thing that dragged me into web development is to look at
+                            my code changes in an instance and deciding or improving my code.
+                        </p>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5">
+                        <p>
+                            It's highly practical looking at the immediate changes that happen
+                            on your webpage and fix them accordingly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row about-me__buttons">
+            <div class="col-lg-5 tab-full" data-aos="fade-up">
+                <a href="#contact" class="btn btn--stroke w-100">Hire Me</a>
+            </div>
+            <div class="col-lg-2 tab-full" data-aos="fade-up">
+            </div>
+            <div class="col-lg-5 tab-full" data-aos="fade-up">
+                <a href="Naveed_Malik_NUST.pdf" class="message_me btn-custom">Download CV</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Work Experience Section -->
+<section id="work-experience" class="py-5">
+    <div class="container">
+        <h2 class="section-heading text-center">Work Experience & Education</h2>
+        <div class="row" style="margin-left: -4%;">
+            <div class="col-md-6 work-item" data-aos="fade-up">
+                <div class="work-item-content">
+                    <div class="work-item-icon-top">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <!-- <div class="work-item-icon-right">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div> -->
+                    <div class="text-center">
+                        <a href="https://mcpinsight.com/" target="_blank"> <img src="./images/mcpinsight-bg-login.png" style="width:200px;height:200px" alt="Company Logo" class="company-logo image-transition"></a>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-header">
+                            <p class="timeline__timeframe">March 2022 - Present</p>
+                            <h5>MCP INSIGHT</h5>
+                            <p class="lead">Full Stack Developer</p>
+                        </div>
+                        <p class="work-description">
+                            • Responsible for maintaining, expanding and scaling the
+                            dashboard of MCP Shield, one of product of the company.<br />
+                            • Adding new features to the MCP Shield product, build on
+                            CodeIgniter framework.<br />
+                            • Write well designed, testable, efficient code by using
+                            best software development practices.<br />
+                            • Optimize the scraping capability to ensure the data is
+                            scrapped efficiently with the minimum usage of server
+                            bandwidth.<br />
+                            • Develop highly reliable web crawlers and parsers across
+                            various websites.<br />
+                            • Extract structured/unstructured data and store them into
+                            Json Format in elastic search.<br />
+                            • Develop frameworks for automating and maintaining a
+                            constant flow of data from multiple sources.<br />
+                            • Develop a deep understanding of the data sources on the
+                            web and know exactly how, when, and which data to scrape,
+                            parse and store this data.<br />
+                            • Active participation in troubleshooting and debugging.<br />
+                            • Creating efficient web crawlers. Create more/better ways
+                            to crawl relevant information.<br />
+                            • Familiarity with best practices and design patterns of
+                            programming languages.<br /> </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://epi.gov.pk/emergency-operations-center/" target="_blank"> <img src="https://www.eoc.gov.pk/assets/images/eoc-logo_old.png" style="width:200px;height:200px" alt="Company Logo" class="company-logo image-transition"></a>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-header">
+                            <p class="timeline__timeframe">March 2022 - Present</p>
+                            <h5>NEOC</h5>
+                            <p class="lead">Frontend Developer</p>
+                        </div>
+                        <p class="work-description">
+                            • Leverage the inbuilt React toolkit for creating frontend
+                            features.<br />
+                            • Create data visualization tools, libraries, and reusable
+                            code for prospects.<br />
+                            • Integrate designs and wireframes within the application
+                            code.<br />
+                            • Monitor interaction of users and convert them into
+                            insightful information.<br />
+                            • Write application interface code with JavaScript.<br />
+                            • Enhance application performance with constant
+                            monitoring.<br />
+                            • Translate wireframes and designs into good quality
+                            code.<br />
+                            • Optimize components to work seamlessly across different
+                            browsers and devices.<br />
+                            • Good understanding of CSS libraries, GIT, Sigma, Adobe XD
+                            etc.<br />
+                            • Proper user information authentication.<br />
+                            • Develop responsive web-based UI.<br /> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 work-item" data-aos="fade-up">
+                <div class="work-item-content">
+                    <!-- <div class="work-item-icon-top">
+                        <i class="fas fa-briefcase"></i>
+                    </div> -->
+                    <div class="work-item-icon-top">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://nust.edu.pk/" target="_blank"> <img src="./images/profile/NUST-Signature-01.png" style="width:200px;height:200px" alt="Company Logo" class="image-transition company-logo"></a>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-header">
+                            <p class="timeline__timeframe">September 2015 - July 2019</p>
+                            <h5>NUST</h5>
+                            <p class="lead">BS COMPUTER ENGINEERING</p>
+                        </div>
+                        <p class="work-description">
+                            I was the average student in my University but was involved
+                            with different technical competition like COMPAC(One of
+                            biggest in our college)<br />
+                            I had done different type of projects in my university and
+                            few of them i have displayed in my portfolio
+                    </div>
+                    <div class="text-center">
+                        <a href="https://cch.edu.pk/" target="_blank"> <img src="./images/profile/cch.png" style="width:200px;height:200px" alt="Company Logo" class="company-logo image-transition"></a>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-header">
+                            <p class="timeline__timeframe">September 2010 - July 2015</p>
+                            <h5>CADET COLLEGE HASANABDAL</h5>
+                            <p class="lead">FSC & Matriculation</p>
+                        </div>
+                        <p class="work-description">
+                            I was Vice President of College Computer, was involved in
+                            other sports, Vice Captain Wing Football team, Vice Caption
+                            College Gymnastics team
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more work items as needed, following the same structure -->
+    </div>
+</section>
+
+<!-- Technical Proficiency Section -->
+<section id="technical-proficiency" class="t-proficiency ss-dark">
+    <div class="shadow-overlay"></div> <!-- Add this line -->
+
+    <div class="container">
+        <div class="row heading-block" data-aos="fade-up">
+            <div class="col-lg-12">
+                <h2 class="section-heading">Technical Proficiency</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="btn-group-vertical w-100 row">
+                    <div class="col-md-7 mb-3">
+                        <button class="btn btn-primary w-100 btn-lg" data-tab="frontend">Frontend Skills</button>
+                        <button class="btn btn-primary w-100 btn-lg" data-tab="backend">Backend Skills</button>
+                    </div>
+                    <div class="col-md-7 mb-3">
+                        <button class="btn btn-primary w-100 btn-lg" data-tab="tools">Tools Used</button>
+                        <button class="btn btn-primary w-100 btn-lg" data-tab="soft-skills">Soft Skills</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="tab-content">
+                    <!-- Frontend Skills -->
+                    <div class="tab-pane" id="frontend">
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">React Js</h5>
+                            <span class="ms-auto">70%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="70"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">React Native</h5>
+                            <span class="ms-auto">75%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="75"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">HTML5</h5>
+                            <span class="ms-auto">90%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="90"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">CSS3</h5>
+                            <span class="ms-auto">85%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="85"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Bootstrap</h5>
+                            <span class="ms-auto">85%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="85"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Javascript</h5>
+                            <span class="ms-auto">80%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="80"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Jquery</h5>
+                            <span class="ms-auto">80%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="80"></div>
+                        </div>
+                        <!-- Add more frontend skills as needed -->
+                    </div>
+
+                    <!-- Backend Skills -->
+                    <div class="tab-pane" id="backend">
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Node.js</h5>
+                            <span class="ms-auto">70%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="70"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Python</h5>
+                            <span class="ms-auto">60%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="75"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Php</h5>
+                            <span class="ms-auto">85%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="80"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Elasticsearch</h5>
+                            <span class="ms-auto">70%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="70"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Mysql</h5>
+                            <span class="ms-auto">80%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="80"></div>
+                        </div>
+                        <!-- Add more backend skills as needed -->
+                    </div>
+
+                    <!-- Tools Used -->
+                    <div class="tab-pane" id="tools">
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Git</h5>
+                            <span class="ms-auto">85%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="85"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Docker</h5>
+                            <span class="ms-auto">60%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="60"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Linux</h5>
+                            <span class="ms-auto">70%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="70"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Visual Studio Code</h5>
+                            <span class="ms-auto">90%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="90"></div>
+                        </div>
+                        <!-- Add more tools as needed -->
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="tab-pane" id="soft-skills">
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Communication</h5>
+                            <span class="ms-auto">90%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="90"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Teamwork</h5>
+                            <span class="ms-auto">85%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="85"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Problem Solving</h5>
+                            <span class="ms-auto">80%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="80"></div>
+                        </div>
+                        <div class="skill-item d-flex justify-content-between align-items-center">
+                            <h5 class="me-auto">Collaboration</h5>
+                            <span class="ms-auto">75%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" data-percentage="75"></div>
+                        </div>
+                        <!-- Add more soft skills as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="capabilities" class="py-5">
+    <div class="container">
+        <div class="row heading-block" data-aos="fade-up">
+            <div class="col-lg-12" style="text-align: center;">
+                <h2 class="section-heading">Capabilities</h2>
+            </div>
+        </div>
+        <div class="row d-flex flex-column justify-content-center align-items-center align-self-center">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 ">
+                <p class="text-justify" style='font-family: "Frank Ruhl Libre", serif; font-size: 4.4rem; font-weight: 300; line-height: 1.159; letter-spacing: -0.05rem; color: #000000;'>
+                    My passion and goal is to help you make your business standout.
+                </p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="s-services ss-dark ">
+    <div class="shadow-overlay"></div>
+
+    <div class="container">
+        <div class="row heading-block" data-aos="fade-up">
+            <div class="col-lg-12">
+                <h2 class="section-heading">Services</h2>
+            </div>
+        </div>
+        <div
+            class="row services-list block-large-1-3 block-medium-1-2 block-tab-full">
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title">Web Design</h4>
+                    <p>
+                        I have a good expeience in web development with vast technologies.
+                        My best technstack is React with Node js. Also work with Wordpress
+                        as a freelancer, including HTML, CSS, BootStrap, PHP and many
+                        others I take a proactive approach to web development and
+                        elaborate on ways to uncover less obvious business requirements,
+                        save costs and envisage risks for your website and make the
+                        project up-to the clients requirement.
+                    </p>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title">Mobile Design</h4>
+                    <p>
+                        I have good experience with React Native techstack, also work with
+                        Java & XML for native mobile apps. I offer a full cycle of
+                        application design, integration and management services. Whether
+                        it is a consumer oriented app or a transformative enterprise-class
+                        solution, the company leads the entire mobile app development
+                        process from ideation and concept to delivery, and to ongoing
+                        ongoing support.
+                    </p>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title">Brand Identity</h4>
+                    <p>
+                        I have been doing freelancing for many clients in my own country
+                        for their brand identity, like logo design, business card,
+                        invitation cards, packaging designs and many other stuffs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title">UI/UX Design</h4>
+                    <p>
+                        I am pretty good in graphics content of mobile app using adobe XD
+                        and illustrator, i have good eye for creativity and a great
+                        artist.
+                    </p>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title">Illustration</h4>
+                    <p>
+                        I have a keen eye for creativity and pretty good with illustrating
+                        and designsing a character with its unique concept.
+                    </p>
+                </div>
+            </div>
+
+            <div class="column item-service" data-aos="fade-up">
+                <div class="item-service__content">
+                    <h4 class="item-title">Wordpress Design</h4>
+                    <p>
+                        I am pretty confident on my wordpress skills, i can create a fully
+                        developed website for the clients depending upon the needs of
+                        clients. I can create a custom theme or install plugins for
+                        specific features or remove the bugs in the code.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<link rel="stylesheet" href="./portfolio_style.css">
+
+<div class="row heading-block" id=portfolio data-aos="fade-up" style="
+    margin-top: 5%;
+    margin-left: 3%;
+">
+    <div class="col-lg-12" style="text-align: center;">
+        <h2 class="section-heading" >Portfolio</h2>
+        <h3 class="section-subheading"> Here are some of my selected works I have done lately. Feel free to
+            check them out.</h3>
+    </div>
+</div>
+
+<div class="portfolio-slider" >
+    <div class="portfolio-contents-wrapper">
+
+
+        <section class="portfolioRow">
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/eoc_dashboard.JPG" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/food-delivery-app.JPG" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/linkedin-scrapping.png" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/mcpnet_dashboard.JPG" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/mcpshield_dashboard.JPG" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/pinterest-scrapping.JPG" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/tagging.JPG" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/twitter_to_json.webp" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioItem active">
+                <div class="image-container">
+                    <img src="./images/portfolio/shield.jpeg" alt="Project 1">
+                    <div class="overlay">
+                        <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="indicators">
+            <div class="dot active" attr='0' onclick="switchPortfolio(this)"></div>
+            <div class="dot" attr='1' onclick="switchPortfolio(this)"></div>
+            <div class="dot" attr='2' onclick="switchPortfolio(this)"></div>
+            <div class="dot" attr='3' onclick="switchPortfolio(this)"></div>
+            <div class="dot" attr='4' onclick="switchPortfolio(this)"></div>
+        </section>
+
+    </div>
+</div>
+<script src="./portfolio_script.js"></script>
+<link rel="stylesheet" href="./testimonials_style.css">
+
+<div class="s-testimonials">
+    <div class="testimonials-contents-wraper">
+
+        <section class="section-heading">
+            <h1>Testimonial</h1>
+        </section>
+
+        <section class="testRow">
+            <div class="testItem active">
+                <img src="./images/avatars/user-09.PNG">
+                <h3>Mr Faisal Ameer</h3>
+                <h4>Head of Technology,MCP INSIGHT, UK</h4>
+                <p> “He is passionate about his work. Because he loves what he does, he
+                    has a steady source of motivation that drives him to do his best
+                    and learn new skills that help him to do better work.”</p>
+            </div>
+            <div class="testItem">
+                <img src="./images/avatars/user-08.PNG">
+                <h3>Dr Altaf Bosan </h3>
+                <h4>BMGF Representative, NEOC, Islamabad</h4>
+                <p>"Working with Naveed has been an exceptional experience. Naveed] consistently demonstrates a strong work ethic, a keen eye for detail, and an unwavering commitment to excellence. As a member of our team, he has shown remarkable initiative in tackling complex projects and delivering high-quality results. Naveed's ability to adapt to new challenges and collaborate effectively with colleagues has significantly contributed to our success. I am confident that he will continue to excel in all future endeavors."</p>
+            </div>
+
+            <div class="testItem">
+                <img src="./images/avatars/user-01.jpg">
+                <h3>Muhammad Asaf Javed</h3>
+                <h4>NEOC, Islamabad </h4>
+                <p> “Your vision and ability to put things in perspective have
+                    consistently inspired me and our team to do our best work and
+                    strive for excellence.”</p>
+            </div>
+
+            <div class="testItem">
+                <img src="./images/avatars/user-07.jpg">
+                <h3>Prof Usman Qamar</h3>
+                <h4>HOD CSE, NUST</h4>
+                <p> “One of your strengths is that you almost always deliver projects
+                    on time. Some talented people really struggle in that area. Our
+                    clients expect it, and hitting these goals is critical to
+                    everything that we do.”</p>
+            </div>
+
+            <div class="testItem">
+                <img src="./images/avatars/user-02.jpg">
+                <h3>Mr Muazzam Ali Saqib</h3>
+                <h4>Assistan Prof, CCH</h4>
+                <p>I have had the pleasure of teaching Naveed in several courses during his time at Cadet College HasanAbdal. Naveed is an exceptional student who has always shown a deep understanding of the subject matter and a passion for learning. He consistently went above and beyond to grasp complex concepts and apply them creatively in class projects and assignments. Naveed's enthusiasm for technology, combined with his analytical skills and collaborative spirit, makes him a standout individual. I am confident that he will make significant contributions in any professional setting.</p>
+            </div>
+
+
+        </section>
+
+        <section class="indicators">
+            <div class="dot active" attr='0' onclick="switchTest(this)"></div>
+            <div class="dot" attr='1' onclick="switchTest(this)"></div>
+            <div class="dot" attr='2' onclick="switchTest(this)"></div>
+            <div class="dot" attr='3' onclick="switchTest(this)"></div>
+            <div class="dot" attr='4' onclick="switchTest(this)"></div>
+        </section>
+
+    </div>
+</div>
+
+<!-- Script JS -->
+<script src="./script.js"></script>
+</body>
+<footer style="margin-top: 3%;">
+  <div class="container" id="contact">
+    <div class="row heading-block" data-aos="fade-up">
+      <div class="col-lg-12">
+        <h2 class="section-heading" style="float: left;">GET IN TOUCH</h2>
+      </div>
+    </div>
+    <div class="row" style="padding-top: 3%;padding-bottom:3%" ;>
+      <!-- Column for Text and Message Me Button -->
+      <div class="col-lg-5 offset-lg-1">
+        <p class="text-justify" style='text-align:justify; font-family: "Frank Ruhl Libre", serif; font-size: 1.5rem; font-weight: 300; line-height: 1.159; letter-spacing: -0.05rem; color: #767776;'>
+          I specialize in building high-quality websites and mobile applications that help businesses reach their goals. Whether you're a startup or an established company, I'm here to bring your ideas to life with innovative solutions tailored to your needs. Let's collaborate to create something exceptional.
+        </p>
+        <!-- <a href="mailto:#0" class="message_me btn-custom">Message Me</a> -->
+      </div>
+
+      <!-- Column for Follow Me and Contact Me -->
+      <div class="col-lg-5">
+        <div class="row">
+          <!-- Follow Me Section -->
+          <div class="col-md-6 follow-contact">
+            <div style="color:white">
+              <h5>Follow Me</h5>
+            </div>
+            <div style="color:#767776"><a class="anchor_tags" href="https://github.com/malikdesigner/" target="_blank">Github</a></div>
+            <div style="color:#767776"><a class="anchor_tags" href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank">Linkedln</a></div>
+            <div style="color:#767776"><a class="anchor_tags" href="https://www.facebook.com/naveed.a.malik.507" target="_blank">Facebook</a></div>
+            <div style="color:#767776"><a class="anchor_tags" href="#">Instagram</a></div>
+          </div>
+
+          <!-- Contact Me Section -->
+          <div class="col-md-6 contact-info">
+            <div style="color:white">
+              <h5>Contact Me</h5>
+            </div>
+            <div style="color:#767776"><a href="mailto:#0" class="anchor_tags">navidml6453@gmail.com</a></div>
+            <div style="color:#767776"><a href="sms:+923476806022" class="anchor_tags">+92 347 6806022</a></div>
+          </div>
+        </div>
+        <!-- <a href="mailto:#0" class="get_my_cv btn-custom">GET MY CV</a> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 offset-lg-1">
+        <a href="mailto:#0" class="message_me btn-custom">Message Me</a>
+      </div>
+      <div class="col-lg-5">
+        <a href="mailto:#0" class="get_my_cv btn-custom">GET MY CV</a>
+
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-container">
+      <!-- Social Media Icons -->
+      <div class="social-media-icons">
+        <a href="https://www.facebook.com/naveed.a.malik.507" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/malikdesigner/" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+      </div>
+
+      <!-- Footer Text -->
+      <div class="footer-text-container">
+        <p class="footer-text">&copy; 2024 Naveed Malik. All rights reserved.</p>
+        <p class="footer-text">Designed by <a href="https://github.com/malikdesigner/" target="_blank" class="footer-text">Naveed Malik</a></p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.profile-image');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      // Hide the current image
+      images[currentIndex].style.opacity = 0;
+
+      // Update index for the next image
+      currentIndex = (currentIndex + 1) % images.length;
+
+      // Show the next image
+      images[currentIndex].style.opacity = 1;
+
+      // Set a timeout for the next change
+      setTimeout(showNextImage, 3000); // Change every 3 seconds
+    }
+
+    // Start the animation
+    showNextImage();
+
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+
+    // Function to handle tab switching
+    function switchTab(tabId) {
+      // Hide all tab panes
+      const tabPanes = document.querySelectorAll('.tab-pane');
+      tabPanes.forEach(pane => {
+        // Reset progress bars
+        const progressBars = pane.querySelectorAll('.progress-bar');
+        progressBars.forEach(bar => bar.style.width = '0%');
+        pane.classList.remove('show', 'active');
+      });
+
+      // Show the selected tab pane and animate progress bars
+      const activePane = document.getElementById(tabId);
+      if (activePane) {
+        activePane.classList.add('show', 'active');
+        const progressBars = activePane.querySelectorAll('.progress-bar');
+        setTimeout(() => {
+          progressBars.forEach(bar => {
+            const percentage = bar.getAttribute('data-percentage');
+            bar.style.width = percentage + '%';
+          });
+        }, 50); // Small delay to trigger the transition
+      }
+
+      // Set active state for buttons
+      const tabButtons = document.querySelectorAll('.btn-group-vertical .btn');
+      tabButtons.forEach(button => button.classList.remove('active'));
+      const activeButton = document.querySelector(`.btn-group-vertical .btn[data-tab="${tabId}"]`);
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+    }
+
+    // Attach click event listeners to buttons
+    const tabButtons = document.querySelectorAll('.btn-group-vertical .btn');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+        switchTab(tabId);
+      });
+    });
+
+    // Initialize the first tab as active
+    switchTab('frontend'); // Change this if you want a different default tab
+    const slides = document.querySelector('.testimonials__slides');
+    const slideWidth = slides.querySelector('.testimonials__slide').clientWidth;
+    const totalSlides = slides.children.length;
+    let currentIndexs = 0;
+
+    document.querySelector('.arrow--right').addEventListener('click', function() {
+      if (currentIndexs < totalSlides - 1) {
+        currentIndexs++;
+      } else {
+        currentIndexs = 0;
+      }
+      slides.style.transform = `translateX(-${currentIndexs * slideWidth}px)`;
+    });
+
+    document.querySelector('.arrow--left').addEventListener('click', function() {
+      if (currentIndexs > 0) {
+        currentIndexs--;
+      } else {
+        currentIndexs = totalSlides - 1;
+      }
+      slides.style.transform = `translateX(-${currentIndexs * slideWidth}px)`;
+    });
+  });
+</script>
+
+</html>
