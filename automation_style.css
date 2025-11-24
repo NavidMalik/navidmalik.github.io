@@ -1,0 +1,174 @@
+/* automation_style.css */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.automation-slider {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.automation-slider .automation-contents-wrapper {
+  width: 100%;
+  min-height: inherit;
+  margin: 30px auto;
+  text-align: center;
+  position: relative;
+}
+
+.automationRow {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: fit-content;
+}
+
+.automationItem {
+  flex: 1 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.video-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.video-container:hover video {
+  transform: scale(1.1);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:hover .video-overlay {
+  opacity: 1;
+}
+
+.play-btn {
+  background: #cf1767;
+  border: none;
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.2);
+  background: #ff1493;
+}
+
+.automation-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.automation-indicators .auto-dot {
+  width: 15px;
+  height: 15px;
+  margin: 0 3px;
+  border: 3px solid #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.automation-indicators .active {
+  background-color: #0e0f0f;
+}
+
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.video-modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-modal:hover {
+  color: #cf1767;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+}
+
+@media (max-width: 768px) {
+  .automationItem {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .automationItem {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

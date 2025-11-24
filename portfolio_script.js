@@ -1,3 +1,4 @@
+// portfolio_script.js
 document.addEventListener("DOMContentLoaded", () => {
     const portfolioRow = document.querySelector('.portfolioRow');
     const portfolioItems = document.querySelectorAll('.portfolioItem');
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupPauseEvents(indicators);
 
     dots.forEach(dot => {
-        dot.addEventListener('click', function() {
+        dot.addEventListener('click', function () {
             stopAutoSliding();
             switchPortfolio(this);
         });
