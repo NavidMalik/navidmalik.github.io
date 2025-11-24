@@ -1,3 +1,4 @@
+<!-- profiles.php -->
 <section id="profiles" class="profiles">
 			<div class="profiles-details">
 				<div class="section-heading text-center">
