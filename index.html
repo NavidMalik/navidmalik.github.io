@@ -12,8 +12,18 @@
     <link href="automation_style.css" rel="stylesheet">
     <link href="testimonials_style.css" rel="stylesheet">
     <link href="fiverr_reviews_style.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Initial Theme Script to avoid flash of wrong theme -->
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </head>
 
 <body>
@@ -67,6 +77,11 @@
                             <span class="nav-underline"></span>
                         </a>
                     </li>
+                    <li class="nav-item d-flex align-items-center ms-lg-3">
+                        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
 
                 <!-- Social Media Icons -->
@@ -103,403 +118,63 @@
             </div>
         </div>
     </nav>
-
-    <style>
-        /* Home Section */
-        #home {
-            position: relative;
-            background-image: url('./images/services-bg-color.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            overflow: hidden;
-        }
-
-        .image-column {
-            position: relative;
-            padding: 2rem;
-        }
-
-        .profile-image-wrapper {
-            position: relative;
-            width: 400px;
-            height: 500px;
-            margin: 0 auto;
-            perspective: 1000px;
-        }
-
-        /* Hexagon Shape */
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            border: none;
-            position: relative;
-            z-index: 2;
-            animation: float 6s ease-in-out infinite;
-            filter: drop-shadow(0 0 30px rgba(207, 23, 103, 0.8)) drop-shadow(0 0 60px rgba(255, 20, 147, 0.6));
-            transition: all 0.5s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05) rotateY(10deg);
-            filter: drop-shadow(0 0 40px rgba(207, 23, 103, 1)) drop-shadow(0 0 80px rgba(255, 20, 147, 0.8));
-        }
-
-        /* Animated border frame */
-        .profile-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: linear-gradient(45deg, #cf1767, #ff1493, #cf1767, #ff1493);
-            background-size: 300% 300%;
-            z-index: 1;
-            animation: gradient-shift 4s ease infinite;
-            opacity: 0.6;
-        }
-
-        .profile-image-wrapper::after {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: linear-gradient(90deg, transparent, #cf1767, transparent);
-            z-index: 0;
-            animation: rotate-border 3s linear infinite;
-            opacity: 0.4;
-        }
-
-        /* Geometric decorative elements */
-        .geometric-shape {
-            position: absolute;
-            border: 2px solid #cf1767;
-            opacity: 0.3;
-            animation: rotate-shape 20s linear infinite;
-        }
-
-        .geometric-shape.triangle {
-            width: 0;
-            height: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-            border-bottom: 86px solid #cf1767;
-            top: -50px;
-            right: -30px;
-            animation: float-triangle 5s ease-in-out infinite;
-        }
-
-        .geometric-shape.square {
-            width: 60px;
-            height: 60px;
-            bottom: -20px;
-            left: -20px;
-            transform: rotate(45deg);
-            animation: rotate-square 8s linear infinite;
-        }
-
-        .geometric-shape.diamond {
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            border: 3px solid #ff1493;
-            transform: rotate(45deg);
-            top: 50%;
-            right: -40px;
-            animation: pulse-diamond 3s ease-in-out infinite;
-        }
-
-        /* Glowing orbs */
-        .glowing-orb {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #ff1493, #cf1767);
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgba(207, 23, 103, 0.8);
-            animation: float-orb 6s ease-in-out infinite;
-        }
-
-        .glowing-orb:nth-child(1) {
-            top: 10%;
-            left: -10%;
-            animation-delay: 0s;
-        }
-
-        .glowing-orb:nth-child(2) {
-            bottom: 15%;
-            right: -10%;
-            animation-delay: 2s;
-        }
-
-        .glowing-orb:nth-child(3) {
-            top: 60%;
-            left: -15%;
-            animation-delay: 4s;
-        }
-
-        /* Light rays effect */
-        .light-ray {
-            position: absolute;
-            width: 2px;
-            height: 150px;
-            background: linear-gradient(to bottom, transparent, #cf1767, transparent);
-            opacity: 0.3;
-            animation: ray-rotate 10s linear infinite;
-        }
-
-        .light-ray:nth-child(1) {
-            top: 50%;
-            left: 50%;
-            transform-origin: top center;
-        }
-
-        .light-ray:nth-child(2) {
-            top: 50%;
-            left: 50%;
-            transform-origin: top center;
-            animation-delay: -3.33s;
-        }
-
-        .light-ray:nth-child(3) {
-            top: 50%;
-            left: 50%;
-            transform-origin: top center;
-            animation-delay: -6.66s;
-        }
-
-        /* Hexagonal grid background */
-        .hex-grid {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .hex-grid::before,
-        .hex-grid::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            border: 1px solid #cf1767;
-        }
-
-        .hex-grid::before {
-            top: 10%;
-            right: 5%;
-            animation: pulse-hex 4s ease-in-out infinite;
-        }
-
-        .hex-grid::after {
-            bottom: 10%;
-            left: 5%;
-            animation: pulse-hex 4s ease-in-out infinite 2s;
-        }
-
-        /* Animations */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
+    <script>
+        // Theme Toggler Logic Setup
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const icon = themeToggleBtn.querySelector('i');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            if (currentTheme === 'light') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
             }
 
-            50% {
-                transform: translateY(-20px);
-            }
-        }
+            themeToggleBtn.addEventListener('click', () => {
+                let theme = document.documentElement.getAttribute('data-theme');
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        });
+    </script>
 
-        @keyframes gradient-shift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes rotate-border {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes rotate-shape {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes float-triangle {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-30px) rotate(180deg);
-            }
-        }
-
-        @keyframes rotate-square {
-            0% {
-                transform: rotate(45deg) scale(1);
-            }
-
-            50% {
-                transform: rotate(225deg) scale(1.2);
-            }
-
-            100% {
-                transform: rotate(405deg) scale(1);
-            }
-        }
-
-        @keyframes pulse-diamond {
-
-            0%,
-            100% {
-                transform: rotate(45deg) scale(1);
-                opacity: 0.3;
-            }
-
-            50% {
-                transform: rotate(45deg) scale(1.5);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes float-orb {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0);
-            }
-
-            33% {
-                transform: translateY(-30px) translateX(20px);
-            }
-
-            66% {
-                transform: translateY(-10px) translateX(-15px);
-            }
-        }
-
-        @keyframes ray-rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes pulse-hex {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.1;
-            }
-
-            50% {
-                transform: scale(1.2);
-                opacity: 0.3;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .profile-image-wrapper {
-                width: 300px;
-                height: 375px;
-            }
-
-            .geometric-shape.triangle {
-                border-left: 30px solid transparent;
-                border-right: 30px solid transparent;
-                border-bottom: 52px solid #cf1767;
-            }
-
-            .geometric-shape.square {
-                width: 40px;
-                height: 40px;
-            }
-        }
-
-        .text-content {
-            text-align: left;
-            position: relative;
-        }
-
-        .text-content h2 {
-            color: white;
-        }
-
-        .typing-container {
-            font-size: 4.0rem;
-            font-weight: 500;
-            white-space: nowrap;
-            overflow: hidden;
-            color: #cf1767;
-            height: 6.5rem;
-            display: inline-block;
-        }
-    </style>
-
-    <!-- Home Section -->
-    <section id="home" class="d-flex align-items-center vh-100">
-        <div class="container text-center text-md-start">
-            <div class="row">
-                <div
-                    class="col-md-7 d-flex flex-column justify-content-left align-items-left align-self-center text-content">
-                    <h1>Hello, I am </h1>
-                    <div id="typing-container" class="typing-container"></div>
-                    <p>
-                        I am a highly skilled Software Developer, with knowledge of various tools and languages and
-                        eager to
-                        learn new skills, which I can utilize for the wellbeing of the company.
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- 3D Canvas Background -->
+        <div id="canvas-container"></div>
+        
+        <div class="container hero-content-wrapper position-relative" style="z-index: 2;">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7 col-md-12 text-content hero-text" data-aos="fade-right">
+                    <h5 class="greeting-text">Hello, I am</h5>
+                    <h1 class="hero-title"><span id="typing-container" class="typing-container"></span></h1>
+                    <h2 class="hero-subtitle">Automation Engineer | Full Stack Developer | Data Systems Specialist</h2>
+                    <p class="hero-description mt-3">
+                        I am a highly skilled Software Developer, with knowledge of various tools and languages, eager to learn new skills and build scalable, high-performance systems.
                     </p>
+                    <div class="hero-buttons mt-4">
+                        <a href="#portfolio" class="btn btn-primary btn-glow">View Projects</a>
+                        <a href="#contact" class="btn btn-outline ms-3">Contact Me</a>
+                    </div>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center image-column">
-                    <div class="profile-image-wrapper">
-                        <div class="hex-grid"></div>
-                        <img src="./images/my_profile.png" alt="Your Image" class="profile-image">
-                        <div class="geometric-shape triangle"></div>
-                        <div class="geometric-shape square"></div>
-                        <div class="geometric-shape diamond"></div>
-                        <div class="glowing-orb"></div>
-                        <div class="glowing-orb"></div>
-                        <div class="glowing-orb"></div>
-                        <div class="light-ray"></div>
-                        <div class="light-ray"></div>
-                        <div class="light-ray"></div>
+                <div class="col-lg-5 col-md-12 d-flex justify-content-center image-column mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+                    <div class="profile-image-wrapper modern-profile-wrapper">
+                        <img src="./images/my_profile.png" alt="Naveed Malik" class="profile-image modern-profile">
+                        <div class="glow-ring"></div>
+                        <div class="glow-ring delay-1"></div>
+                        <!-- Floating Tech Icons -->
+                        <div class="floating-icon icon-1"><i class="fab fa-react"></i></div>
+                        <div class="floating-icon icon-2"><i class="fab fa-node-js"></i></div>
+                        <div class="floating-icon icon-3"><i class="fab fa-python"></i></div>
                     </div>
                 </div>
             </div>
@@ -507,57 +182,56 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="s-about py-5">
+    <section id="about" class="py-5" style="background-color: var(--surface-color);">
         <div class="container">
-            <div class="row heading-block" data-aos="fade-up">
+            <div class="row heading-block mb-5" data-aos="fade-up">
                 <div class="col-lg-12">
                     <h2 class="section-heading">About Me</h2>
                 </div>
             </div>
-            <div class="row about-me__content" data-aos="fade-up">
-                <div class="col-lg-12 about-me__text">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p class="lead">
-                                I have a great passion for development and mainly regarding web
-                                and app development. There are many things that make me passionate
-                                about web development.
-                            </p>
-                        </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>
-                                The pace at which the changes are happening, needs continuous
-                                learning, competitiveness among frameworks which is healthy and
-                                brings the best out of them.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p>
-                                The major thing that dragged me into web development is to look at
-                                my code changes in an instance and deciding or improving my code.
-                            </p>
-                        </div>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-5">
-                            <p>
-                                It's highly practical looking at the immediate changes that happen
-                                on your webpage and fix them accordingly.
-                            </p>
-                        </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <p class="lead fw-bold" style="color: var(--primary-color);">Bringing Ideas to Life Through Code</p>
+                    <p class="hero-description mt-3">
+                        I am a passionate Full Stack Developer and Automation Engineer with a knack for building scalable web applications and developing robust data pipelines. I specialize in turning complex problems into elegant, efficient solutions, whether that means crafting intuitive UIs or architecting reliable backend systems.
+                    </p>
+                    <div class="mt-4">
+                        <a href="Naveed_Malik_Software_Engr.pdf" download class="btn btn-primary btn-glow">
+                            <i class="fas fa-download me-2"></i>Download CV
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="row about-me__buttons">
-                <div class="col-lg-5 tab-full" data-aos="fade-up">
-                    <a href="#contact" class="btn btn--stroke w-100">Hire Me</a>
-                </div>
-                <div class="col-lg-2 tab-full" data-aos="fade-up">
-                </div>
-                <div class="col-lg-5 tab-full" data-aos="fade-up">
-                    <a href="Naveed_Malik_Software_Engr.pdf" download class="message_me btn-custom">Download CV</a>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="about-card p-4 rounded h-100">
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-laptop-code fa-2x"></i></div>
+                                <h4 class="h5 fw-bold" style="color: var(--text-color);">Full Stack Dev</h4>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Building responsive, high-performance web applications using modern frameworks like React and Node.js.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-card p-4 rounded h-100">
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-robot fa-2x"></i></div>
+                                <h4 class="h5 fw-bold" style="color: var(--text-color);">Web Automation</h4>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Creating intelligent scripts and crawlers to automate workflows and extract structured data seamlessly.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-card p-4 rounded h-100">
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-database fa-2x"></i></div>
+                                <h4 class="h5 fw-bold" style="color: var(--text-color);">Data Systems</h4>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Designing and optimizing databases and elastic search indices for heavy data-driven applications.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-card p-4 rounded h-100">
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-bolt fa-2x"></i></div>
+                                <h4 class="h5 fw-bold" style="color: var(--text-color);">Performance Opt</h4>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Enhancing application speed, security, and scalability through best practices and modern architecture.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -731,184 +405,67 @@
     </section>
 
     <!-- Technical Proficiency Section -->
-    <section id="technical-proficiency" class="t-proficiency ss-dark">
-        <div class="shadow-overlay"></div>
-
+    <section id="technical-proficiency" class="py-5 bg-base" style="background-color: var(--bg-color);">
         <div class="container">
-            <div class="row heading-block" data-aos="fade-up">
+            <div class="row heading-block mb-5" data-aos="fade-up">
                 <div class="col-lg-12">
-                    <h2 class="section-heading">Technical Proficiency</h2>
+                    <h2 class="section-heading text-center">Technical Proficiency</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="btn-group-vertical w-100 row">
-                        <div class="col-md-7 mb-3">
-                            <button class="btn btn-primary w-100 btn-lg" data-tab="frontend">Frontend Skills</button>
-                            <button class="btn btn-primary w-100 btn-lg" data-tab="backend">Backend Skills</button>
-                        </div>
-                        <div class="col-md-7 mb-3">
-                            <button class="btn btn-primary w-100 btn-lg" data-tab="tools">Tools Used</button>
-                            <button class="btn btn-primary w-100 btn-lg" data-tab="soft-skills">Soft Skills</button>
+            <div class="row g-4 justify-content-center">
+                <!-- Frontend -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="icon-box mb-3 text-primary"><i class="fas fa-desktop fa-2x"></i></div>
+                        <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">Frontend</h4>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge"><i class="fab fa-react me-1 text-info"></i>React</span>
+                            <span class="skill-badge"><i class="fab fa-vuejs me-1 text-success"></i>Vue.js</span>
+                            <span class="skill-badge"><i class="fab fa-js me-1 text-warning"></i>JavaScript</span>
+                            <span class="skill-badge"><i class="fab fa-html5 me-1 text-danger"></i>HTML/CSS</span>
+                            <span class="skill-badge"><i class="fab fa-bootstrap me-1 text-primary"></i>Bootstrap</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="tab-content">
-                        <!-- Frontend Skills -->
-                        <div class="tab-pane" id="frontend">
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">React Js</h5>
-                                <span class="ms-auto">70%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="70"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">React Native</h5>
-                                <span class="ms-auto">75%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="75"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">HTML5</h5>
-                                <span class="ms-auto">90%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="90"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">CSS3</h5>
-                                <span class="ms-auto">85%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="85"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Bootstrap</h5>
-                                <span class="ms-auto">85%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="85"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Javascript</h5>
-                                <span class="ms-auto">80%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="80"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Jquery</h5>
-                                <span class="ms-auto">80%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="80"></div>
-                            </div>
+                <!-- Backend -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="icon-box mb-3 text-primary"><i class="fas fa-server fa-2x"></i></div>
+                        <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">Backend</h4>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge"><i class="fab fa-node-js me-1 text-success"></i>Node.js</span>
+                            <span class="skill-badge"><i class="fab fa-python me-1" style="color:#306998;"></i>Python</span>
+                            <span class="skill-badge">Django</span>
+                            <span class="skill-badge"><i class="fab fa-php me-1" style="color:#777bb4;"></i>PHP</span>
+                            <span class="skill-badge">Express.js</span>
                         </div>
-
-                        <!-- Backend Skills -->
-                        <div class="tab-pane" id="backend">
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Node.js</h5>
-                                <span class="ms-auto">70%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="70"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Python</h5>
-                                <span class="ms-auto">60%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="75"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Php</h5>
-                                <span class="ms-auto">85%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="80"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Elasticsearch</h5>
-                                <span class="ms-auto">70%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="70"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Mysql</h5>
-                                <span class="ms-auto">80%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="80"></div>
-                            </div>
+                    </div>
+                </div>
+                <!-- Database -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="icon-box mb-3 text-primary"><i class="fas fa-database fa-2x"></i></div>
+                        <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">Database</h4>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge">MongoDB</span>
+                            <span class="skill-badge">MySQL</span>
+                            <span class="skill-badge">PostgreSQL</span>
+                            <span class="skill-badge">Redis</span>
+                            <span class="skill-badge">Elasticsearch</span>
                         </div>
-
-                        <!-- Tools Used -->
-                        <div class="tab-pane" id="tools">
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Git</h5>
-                                <span class="ms-auto">85%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="85"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Docker</h5>
-                                <span class="ms-auto">60%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="60"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Linux</h5>
-                                <span class="ms-auto">70%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="70"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Visual Studio Code</h5>
-                                <span class="ms-auto">90%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="90"></div>
-                            </div>
-                        </div>
-
-                        <!-- Soft Skills -->
-                        <div class="tab-pane" id="soft-skills">
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Communication</h5>
-                                <span class="ms-auto">90%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="90"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Teamwork</h5>
-                                <span class="ms-auto">85%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="85"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Problem Solving</h5>
-                                <span class="ms-auto">80%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="80"></div>
-                            </div>
-                            <div class="skill-item d-flex justify-content-between align-items-center">
-                                <h5 class="me-auto">Collaboration</h5>
-                                <span class="ms-auto">75%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" data-percentage="75"></div>
-                            </div>
+                    </div>
+                </div>
+                <!-- DevOps & Tools -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="icon-box mb-3 text-primary"><i class="fas fa-tools fa-2x"></i></div>
+                        <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">DevOps / Tools</h4>
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <span class="skill-badge"><i class="fab fa-docker me-1 text-info"></i>Docker</span>
+                            <span class="skill-badge"><i class="fab fa-aws me-1 text-warning"></i>AWS</span>
+                            <span class="skill-badge"><i class="fab fa-git-alt me-1 text-danger"></i>Git</span>
+                            <span class="skill-badge">Linux</span>
+                            <span class="skill-badge">VS Code</span>
                         </div>
                     </div>
                 </div>
@@ -1037,186 +594,136 @@
         </div>
     </div>
 
-    <div class="portfolio-slider">
-        <div class="portfolio-contents-wrapper">
-            <section class="portfolioRow">
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/eoc_dashboard.JPG" alt="Project 1">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+    <div class="container mb-5">
+        <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card rounded overflow-hidden h-100">
+                    <div class="project-img-wrapper">
+                        <img src="./images/portfolio/eoc_dashboard.JPG" alt="EOC Dashboard" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
+                            <a href="#" class="btn btn-primary rounded-pill shadow-sm ms-2">View Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
+                        <h5 class="fw-bold mb-2">EOC Dashboard</h5>
+                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Emergency Operations Center dashboard for real-time analytics and tracking.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark shadow-sm">React</span>
+                            <span class="badge bg-light text-dark shadow-sm">Node.js</span>
                         </div>
                     </div>
                 </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/food-delivery-app.JPG" alt="Project 2">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/food-delivery-app" target="_blank"
-                                class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card rounded overflow-hidden h-100">
+                    <div class="project-img-wrapper">
+                        <img src="./images/portfolio/food-delivery-app.JPG" alt="Food Delivery App" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/yourprofile/food-delivery-app" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
+                            <a href="#" class="btn btn-primary rounded-pill shadow-sm ms-2">View Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
+                        <h5 class="fw-bold mb-2">Food Delivery Platform</h5>
+                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">A comprehensive food delivery application connecting users with local restaurants.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark shadow-sm">Vue.js</span>
+                            <span class="badge bg-light text-dark shadow-sm">Express</span>
                         </div>
                     </div>
                 </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/facebook-scrapping.png" alt="Project 3">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/facebook-scrapping" target="_blank"
-                                class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/mcpnet_dashboard.JPG" alt="Project 4">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/mcpnet_dashboard" target="_blank"
-                                class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/mcpshield_dashboard.JPG" alt="Project 5">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/mcpshield_dashboard" target="_blank"
-                                class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/instagram-scrapping.png" alt="Project 6">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/instagram-scrapping" target="_blank"
-                                class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/tagging.JPG" alt="Project 7">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/tagging" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/twitter_scrapping.png" alt="Project 8">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/twitter_scrapping" target="_blank"
-                                class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/shield.jpeg" alt="Project 9">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/shield" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/vs4-home.jpg" alt="Project 10">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/vs4-home" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/vs4-compliance.jpg" alt="Project 11">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/vs4-compliance" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/project_12.png" alt="Project 11">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/vs4-compliance" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/project_13.png" alt="Project 11">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/vs4-compliance" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/project_15.png" alt="Project 11">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/vs4-compliance" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+            <!-- Project 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card rounded overflow-hidden h-100">
+                    <div class="project-img-wrapper">
+                        <img src="./images/portfolio/mcpshield_dashboard.JPG" alt="MCP Shield" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
+                        <div class="project-overlay">
+                            <a href="https://mcpinsight.com/" target="_blank" class="btn btn-primary rounded-pill shadow-sm ms-2">Visit Site</a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
+                        <h5 class="fw-bold mb-2">MCP Shield Dashboard</h5>
+                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Fraud protection and analytics dashboard serving enterprise telecom clients.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark shadow-sm">PHP</span>
+                            <span class="badge bg-light text-dark shadow-sm">MySQL</span>
                         </div>
                     </div>
                 </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/project_16.png" alt="Project 11">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/vs4-compliance" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolioItem active">
-                    <div class="image-container">
-                        <img src="./images/portfolio/project_14.png" alt="Project 11">
-                        <div class="overlay">
-                            <a href="https://github.com/yourprofile/vs4-compliance" target="_blank" class="github-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-            </section>
+            <!-- Project 4 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card rounded overflow-hidden h-100">
+                    <div class="project-img-wrapper">
+                        <img src="./images/portfolio/facebook-scrapping.png" alt="FB Scraping" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/yourprofile/facebook-scrapping" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
+                        <h5 class="fw-bold mb-2">Social Media Crawler</h5>
+                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Automated data extraction system navigating complex dynamic DOM structures.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark shadow-sm">Python</span>
+                            <span class="badge bg-light text-dark shadow-sm">Selenium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <section class="indicators">
-                <div class="dot active" attr='0' onclick="switchPortfolio(this)"></div>
-                <div class="dot" attr='1' onclick="switchPortfolio(this)"></div>
-                <div class="dot" attr='2' onclick="switchPortfolio(this)"></div>
-                <div class="dot" attr='3' onclick="switchPortfolio(this)"></div>
-                <div class="dot" attr='4' onclick="switchPortfolio(this)"></div>
-            </section>
+            <!-- Project 5 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card rounded overflow-hidden h-100">
+                    <div class="project-img-wrapper">
+                        <img src="./images/portfolio/mcpnet_dashboard.JPG" alt="MCP Net" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/yourprofile/mcpnet_dashboard" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
+                        <h5 class="fw-bold mb-2">MCP Net Tool</h5>
+                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Internal tooling dashboard to support fraud investigations and data flow.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark shadow-sm">CodeIgniter</span>
+                            <span class="badge bg-light text-dark shadow-sm">JS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card rounded overflow-hidden h-100">
+                    <div class="project-img-wrapper">
+                        <img src="./images/portfolio/vs4-home.jpg" alt="VS4 App" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/yourprofile/vs4-home" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
+                        <h5 class="fw-bold mb-2">VS4 Compliance Tracker</h5>
+                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Compliance tracking operations center with workflow automation routing.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark shadow-sm">Nuxt</span>
+                            <span class="badge bg-light text-dark shadow-sm">Elasticsearch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="https://github.com/navidmalik" target="_blank" class="btn btn-outline btn-lg px-5">
+                <i class="fab fa-github me-2"></i> View More on GitHub
+            </a>
         </div>
     </div>
 
@@ -1363,75 +870,92 @@
     </div>
 
     <!-- Testimonials Section -->
-    <div class="s-testimonials">
-        <div class="testimonials-contents-wraper">
-            <section class="section-heading">
-                <h1>Testimonial</h1>
-            </section>
-
-            <section class="testRow">
-                <div class="testItem active">
-                    <img src="./images/avatars/user-09.PNG">
-                    <h3>Mr Faisal Ameer</h3>
-                    <h4>Head of Technology,MCP INSIGHT, UK</h4>
-                    <p> "He is passionate about his work. Because he loves what he does, he
-                        has a steady source of motivation that drives him to do his best
-                        and learn new skills that help him to do better work."</p>
+    <section class="py-5 bg-base" style="background-color: var(--bg-color);">
+        <div class="container">
+            <div class="row heading-block mb-5" data-aos="fade-up">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Testimonials</h2>
                 </div>
-                <div class="testItem">
-                    <img src="./images/avatars/user-08.PNG">
-                    <h3>Dr Altaf Bosan </h3>
-                    <h4>BMGF Representative, NEOC, Islamabad</h4>
-                    <p>"Working with Naveed has been an exceptional experience. Naveed] consistently demonstrates a
-                        strong work ethic, a keen eye for detail, and an unwavering commitment to excellence. As a
-                        member of our team, he has shown remarkable initiative in tackling complex projects and
-                        delivering high-quality results. Naveed's ability to adapt to new challenges and collaborate
-                        effectively with colleagues has significantly contributed to our success. I am confident that he
-                        will continue to excel in all future endeavors."</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./images/avatars/user-09.PNG" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Mr Faisal Ameer</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">Head of Technology, MCP INSIGHT, UK</small>
+                            </div>
+                        </div>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"He is passionate about his work. Because he loves what he does, he has a steady source of motivation that drives him to do his best and learn new skills that help him to do better work."</p>
+                    </div>
                 </div>
 
-                <div class="testItem">
-                    <img src="./images/avatars/user-01.jpg">
-                    <h3>Muhammad Asaf Javed</h3>
-                    <h4>NEOC, Islamabad </h4>
-                    <p> "Your vision and ability to put things in perspective have
-                        consistently inspired me and our team to do our best work and
-                        strive for excellence."</p>
+                <!-- Testimonial 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./images/avatars/user-08.PNG" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Dr Altaf Bosan</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">BMGF Representative, NEOC</small>
+                            </div>
+                        </div>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Working with Naveed has been an exceptional experience. He consistently demonstrates a strong work ethic, a keen eye for detail, and an unwavering commitment to excellence."</p>
+                    </div>
                 </div>
 
-                <div class="testItem">
-                    <img src="./images/avatars/user-07.jpg">
-                    <h3>Prof Usman Qamar</h3>
-                    <h4>HOD CSE, NUST</h4>
-                    <p> "One of your strengths is that you almost always deliver projects
-                        on time. Some talented people really struggle in that area. Our
-                        clients expect it, and hitting these goals is critical to
-                        everything that we do."</p>
+                <!-- Testimonial 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./images/avatars/user-01.jpg" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Muhammad Asaf Javed</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">NEOC, Islamabad</small>
+                            </div>
+                        </div>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Your vision and ability to put things in perspective have consistently inspired me and our team to do our best work and strive for excellence."</p>
+                    </div>
                 </div>
 
-                <div class="testItem">
-                    <img src="./images/avatars/user-02.jpg">
-                    <h3>Mr Muazzam Ali Saqib</h3>
-                    <h4>Assistan Prof, CCH</h4>
-                    <p>I have had the pleasure of teaching Naveed in several courses during his time at Cadet College
-                        HasanAbdal. Naveed is an exceptional student who has always shown a deep understanding of the
-                        subject matter and a passion for learning. He consistently went above and beyond to grasp
-                        complex concepts and apply them creatively in class projects and assignments. Naveed's
-                        enthusiasm for technology, combined with his analytical skills and collaborative spirit, makes
-                        him a standout individual. I am confident that he will make significant contributions in any
-                        professional setting.</p>
+                <!-- Testimonial 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./images/avatars/user-07.jpg" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Prof Usman Qamar</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">HOD CSE, NUST</small>
+                            </div>
+                        </div>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"One of your strengths is that you almost always deliver projects on time. Our clients expect it, and hitting these goals is critical to everything that we do."</p>
+                    </div>
                 </div>
-            </section>
 
-            <section class="indicators">
-                <div class="dot active" attr='0' onclick="switchTest(this)"></div>
-                <div class="dot" attr='1' onclick="switchTest(this)"></div>
-                <div class="dot" attr='2' onclick="switchTest(this)"></div>
-                <div class="dot" attr='3' onclick="switchTest(this)"></div>
-                <div class="dot" attr='4' onclick="switchTest(this)"></div>
-            </section>
+                <!-- Testimonial 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./images/avatars/user-02.jpg" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Mr Muazzam Ali Saqib</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">Assistant Prof, CCH</small>
+                            </div>
+                        </div>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Naveed's enthusiasm for technology, combined with his analytical skills and collaborative spirit, makes him a standout individual. I am confident he will excel in any professional setting."</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Fiverr Reviews Section -->
     <section class="fiverr-reviews-section">
@@ -1541,99 +1065,64 @@
     </div>
 
     <!-- Footer -->
-    <footer style="margin-top: 3%;">
+    <footer style="background-color: var(--surface-color); border-top: 1px solid var(--border-color);" class="pt-5 mt-5 pb-3">
         <div class="container" id="contact">
-            <div class="row heading-block" data-aos="fade-up">
-                <div class="col-lg-12">
-                    <h2 class="section-heading" style="float: left;">GET IN TOUCH</h2>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 3%;padding-bottom:3%">
-                <!-- Column for Text and Message Me Button -->
-                <div class="col-lg-5 offset-lg-1">
-                    <p class="text-justify"
-                        style='text-align:justify; font-family: "Frank Ruhl Libre", serif; font-size: 1.5rem; font-weight: 300; line-height: 1.159; letter-spacing: -0.05rem; color: #767776;'>
-                        I specialize in building high-quality websites and mobile applications that help businesses
-                        reach
-                        their goals. Whether you're a startup or an established company, I'm here to bring your ideas to
-                        life with innovative solutions tailored to your needs. Let's collaborate to create something
-                        exceptional.
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="col-lg-5 mb-4">
+                    <h2 class="fw-bold mb-4" style="color: var(--text-color);">Let's Connect</h2>
+                    <p class="mb-4" style="color: var(--text-color); opacity: 0.8; font-size: 1.1rem; line-height: 1.6;">
+                        I specialize in building high-quality websites and mobile applications. 
+                        Whether you're a startup or an established company, I'm here to bring your ideas to life with innovative solutions.
                     </p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="mailto:navidml6453@gmail.com" class="btn btn-primary rounded-pill px-4 shadow-sm">Message Me</a>
+                        <a href="Naveed_Malik_Software_Engr.pdf" download class="btn btn-outline border-2 rounded-pill px-4 shadow-sm" style="color: var(--text-color); border-color: var(--border-color);">Download CV</a>
+                    </div>
                 </div>
 
-                <!-- Column for Follow Me and Contact Me -->
-                <div class="col-lg-5">
-                    <div class="row">
-                        <!-- Follow Me Section -->
-                        <div class="col-md-6 follow-contact">
-                            <div style="color:white">
-                                <h5>Follow Me</h5>
-                            </div>
-                            <div style="color:#767776"><a class="anchor_tags" href="https://github.com/malikdesigner/"
-                                    target="_blank">Github</a></div>
-                            <div style="color:#767776"><a class="anchor_tags"
-                                    href="https://www.linkedin.com/in/naveed-malik-16a42a182/"
-                                    target="_blank">LinkedIn</a>
-                            </div>
-                            <div style="color:#767776"><a class="anchor_tags"
-                                    href="https://www.facebook.com/profile.php?id=61584345741891"
-                                    target="_blank">Facebook</a></div>
-                            <div style="color:#767776"><a class="anchor_tags"
-                                    href="https://www.instagram.com/studiotechhive/" target="_blank">Instagram</a></div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <h5 class="fw-bold mb-3" style="color: var(--text-color);">Follow Me</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                <li><a href="https://github.com/malikdesigner/" target="_blank" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fab fa-github me-2"></i>GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fab fa-linkedin mb-2"></i>LinkedIn</a></li>
+                                <li><a href="https://www.instagram.com/studiotechhive/" target="_blank" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fab fa-instagram mb-2"></i>Instagram</a></li>
+                            </ul>
                         </div>
-
-                        <!-- Contact Me Section -->
-                        <div class="col-md-6 contact-info">
-                            <div style="color:white">
-                                <h5>Contact Me</h5>
-                            </div>
-                            <div style="color:#767776"><a href="mailto:navidml6453@gmail.com"
-                                    class="anchor_tags">navidml6453@gmail.com</a>
-                            </div>
-                            <div style="color:#767776"><a href="https://wa.link/rymhg3" class="anchor_tags"
-                                    target="_blank">+974 31533910</a>
-                            </div>
-                            <div style="color:#767776"><a href="https://wa.link/i3g8v9" class="anchor_tags"
-                                    target="_blank">+92 337 8277733</a>
-                            </div>
+                        <div class="col-sm-6">
+                            <h5 class="fw-bold mb-3" style="color: var(--text-color);">Contact Info</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                <li><a href="mailto:navidml6453@gmail.com" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fas fa-envelope me-2"></i>Email</a></li>
+                                <li><a href="https://wa.link/rymhg3" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;" target="_blank"><i class="fab fa-whatsapp me-2"></i>+974 31533910</a></li>
+                                <li><a href="https://wa.link/i3g8v9" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;" target="_blank"><i class="fab fa-whatsapp me-2"></i>+92 337 8277733</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-5 offset-lg-1">
-                    <a href="mailto:navidml6453@gmail.com" class="message_me btn-custom">Message Me</a>
-                </div>
-                <div class="col-lg-5">
-                    <a href="Naveed_Malik_Software_Engr.pdf" download class="get_my_cv btn-custom">GET MY CV</a>
-                </div>
-            </div>
 
-            <!-- Footer Bottom Section -->
-            <div class="footer-container">
-                <!-- Social Media Icons -->
-                <div class="social-media-icons">
-                    <a href="https://www.facebook.com/profile.php?id=61584345741891" target="_blank"
-                        class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/studiotechhive/" target="_blank" class="social-icon"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank" class="social-icon"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/malikdesigner/" target="_blank" class="social-icon"><i
-                            class="fab fa-github"></i></a>
-                </div>
-
-                <!-- Footer Text -->
-                <div class="footer-text-container">
-                    <p class="footer-text">&copy; 2024 Naveed Malik. All rights reserved.</p>
-                    <p class="footer-text">Designed by <a href="https://github.com/malikdesigner/" target="_blank"
-                            class="footer-text">Naveed Malik</a></p>
+            <div class="border-top pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center" style="border-color: var(--border-color) !important;">
+                <p class="mb-2 mb-md-0 small" style="color: var(--text-color); opacity: 0.6;">&copy; 2024 Naveed Malik. All rights reserved.</p>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/malikdesigner/" target="_blank" class="btn btn-sm btn-light rounded-circle"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank" class="btn btn-sm btn-light rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/studiotechhive/" target="_blank" class="btn btn-sm btn-light rounded-circle"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
+    
+    <!-- Scroll To Top Button -->
+    <a href="#" id="scrollToTop" class="btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-4 d-none" style="width: 50px; height: 50px; z-index: 1000; align-items: center; justify-content: center; display: flex;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Three.js Library for 3D Elements -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Vanilla Tilt for 3D Card Hover Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="./portfolio_script.js"></script>
     <script src="./automation_script.js"></script>
@@ -1700,15 +1189,92 @@
             next();
         }
 
-        // Main initialization
+        // Initialize Three.js Scene for Hero Section
+        function initThreeJS() {
+            const container = document.getElementById('canvas-container');
+            if(!container) return;
+            
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+            
+            // Particles
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = window.innerWidth > 768 ? 1500 : 500;
+            const posArray = new Float32Array(particlesCount * 3);
+            
+            for(let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 10;
+            }
+            
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            
+            // Get color based on theme
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const particleColor = isDark ? 0x4F46E5 : 0x0EA5E9;
+            
+            const material = new THREE.PointsMaterial({
+                size: 0.015,
+                color: particleColor,
+                transparent: true,
+                opacity: 0.6
+            });
+            
+            const particlesMesh = new THREE.Points(particlesGeometry, material);
+            scene.add(particlesMesh);
+            
+            camera.position.z = 3;
+            
+            let mouseX = 0;
+            let mouseY = 0;
+            
+            document.addEventListener('mousemove', (event) => {
+                mouseX = event.clientX / window.innerWidth - 0.5;
+                mouseY = event.clientY / window.innerHeight - 0.5;
+            });
+            
+            // Resize handler
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+            
+            const animate = () => {
+                requestAnimationFrame(animate);
+                particlesMesh.rotation.y += 0.001;
+                particlesMesh.rotation.x += 0.0005;
+                
+                // Mouse interaction
+                particlesMesh.rotation.y += mouseX * 0.05;
+                particlesMesh.rotation.x += mouseY * 0.05;
+                
+                renderer.render(scene, camera);
+            };
+            
+            animate();
+            
+            // Update particle color on theme switch
+            document.getElementById('themeToggle').addEventListener('click', () => {
+                const updatedIsDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                material.color.setHex(updatedIsDark ? 0x4F46E5 : 0x0EA5E9);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             cycleTexts();
-
             AOS.init({
-                duration: 1000,
+                duration: 800,
                 once: true,
+                offset: 100
             });
-
+            initThreeJS();
+            
+            // Setup other logic like tabs, sliders...
             function switchTab(tabId) {
                 const tabPanes = document.querySelectorAll('.tab-pane');
                 tabPanes.forEach(pane => {
@@ -1716,7 +1282,6 @@
                     progressBars.forEach(bar => bar.style.width = '0%');
                     pane.classList.remove('show', 'active');
                 });
-
                 const activePane = document.getElementById(tabId);
                 if (activePane) {
                     activePane.classList.add('show', 'active');
@@ -1728,7 +1293,6 @@
                         });
                     }, 50);
                 }
-
                 const tabButtons = document.querySelectorAll('.btn-group-vertical .btn');
                 tabButtons.forEach(button => button.classList.remove('active'));
                 const activeButton = document.querySelector(`.btn-group-vertical .btn[data-tab="${tabId}"]`);
@@ -1736,7 +1300,6 @@
                     activeButton.classList.add('active');
                 }
             }
-
             const tabButtons = document.querySelectorAll('.btn-group-vertical .btn');
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -1744,12 +1307,19 @@
                     switchTab(tabId);
                 });
             });
-
             switchTab('frontend');
 
             // Navbar scroll effect
             const navbar = document.querySelector('.modern-navbar');
             const navLinks = document.querySelectorAll('.nav-link-modern');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+
+            if (scrollToTopBtn) {
+                scrollToTopBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -1757,20 +1327,24 @@
                 } else {
                     navbar.classList.remove('scrolled');
                 }
-            });
 
-            const sections = document.querySelectorAll('section[id]');
-
-            window.addEventListener('scroll', () => {
+                if (scrollToTopBtn) {
+                    if (window.scrollY > 300) {
+                        scrollToTopBtn.classList.remove('d-none');
+                    } else {
+                        scrollToTopBtn.classList.add('d-none');
+                    }
+                }
+                
+                // Active link tracking
                 let current = '';
+                const sections = document.querySelectorAll('section[id]');
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
                     if (scrollY >= (sectionTop - 200)) {
                         current = section.getAttribute('id');
                     }
                 });
-
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').includes(current)) {
@@ -1781,5 +1355,4 @@
         });
     </script>
 </body>
-
 </html>

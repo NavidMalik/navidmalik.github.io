@@ -1,15 +1,18 @@
 /* navbar_style.css */
 .modern-navbar {
-  background: rgba(15, 15, 15, 0.95) !important;
-  backdrop-filter: blur(10px);
+  background: var(--surface-color) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 1rem 2rem !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .modern-navbar.scrolled {
   padding: 0.5rem 2rem !important;
-  background: rgba(10, 10, 10, 0.98) !important;
+  background: var(--surface-color) !important;
+  opacity: 0.95;
 }
 
 /* Brand Logo */
@@ -21,7 +24,7 @@
 }
 
 .brand-text {
-  color: #fff;
+  color: var(--text-color);
   transition: all 0.3s ease;
 }
 
@@ -205,4 +208,47 @@
 
 .modern-navbar {
   animation: slideDown 0.5s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--border-color);
+  color: var(--primary-color);
+  transform: rotate(15deg);
+}
+
+.modern-navbar .nav-link-modern {
+  color: var(--text-color) !important;
+}
+.modern-navbar .nav-link-modern:hover, .modern-navbar .nav-link-modern.active {
+  color: var(--primary-color) !important;
+}
+
+.brand-highlight, .brand-highlight::after {
+  color: var(--primary-color);
+}
+.brand-highlight::after {
+  background: var(--primary-color);
+}
+.nav-underline {
+  background: var(--primary-gradient);
+}
+.social-link i {
+  color: var(--text-color);
 }
