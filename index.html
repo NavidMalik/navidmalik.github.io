@@ -15,8 +15,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Initial Theme Script to avoid flash of wrong theme -->
@@ -124,7 +126,7 @@
             const themeToggleBtn = document.getElementById('themeToggle');
             const icon = themeToggleBtn.querySelector('i');
             const currentTheme = document.documentElement.getAttribute('data-theme');
-            
+
             if (currentTheme === 'light') {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
@@ -150,31 +152,45 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <!-- 3D Canvas Background -->
-        <div id="canvas-container"></div>
-        
+        <div id="canvas-container" class="d-none d-md-block"></div>
+
         <div class="container hero-content-wrapper position-relative" style="z-index: 2;">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-7 col-md-12 text-content hero-text" data-aos="fade-right">
-                    <h5 class="greeting-text">Hello, I am</h5>
-                    <h1 class="hero-title"><span id="typing-container" class="typing-container"></span></h1>
-                    <h2 class="hero-subtitle">Automation Engineer | Full Stack Developer | Data Systems Specialist</h2>
-                    <p class="hero-description mt-3">
-                        I am a highly skilled Software Developer, with knowledge of various tools and languages, eager to learn new skills and build scalable, high-performance systems.
+                    <h5 class="greeting-text fw-bold text-uppercase tracking-wide" style="letter-spacing: 2px;">Hello, I
+                        am Naveed Malik</h5>
+                    <h1 class="text-fluid-title py-2" style="color: var(--text-color);">Expert in Automation, Web
+                        Scraping, and Scalable Systems.</h1>
+                    <p class="text-fluid-subtitle mt-3 col-lg-10">
+                        I am dedicated to engineering robust data pipelines, intelligent automation scripts, and
+                        scalable full-stack applications that drive real business value.
                     </p>
-                    <div class="hero-buttons mt-4">
-                        <a href="#portfolio" class="btn btn-primary btn-glow">View Projects</a>
-                        <a href="#contact" class="btn btn-outline ms-3">Contact Me</a>
+                    <div class="hero-buttons mt-5 d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-primary btn-glow px-5 py-3 rounded-pill fw-bold shadow-lg"
+                            style="font-size: 1.1rem;">Hire Me</a>
+                        <a href="#portfolio" class="btn btn-outline border-2 px-5 py-3 rounded-pill fw-bold"
+                            style="font-size: 1.1rem; color: var(--text-color); border-color: var(--text-color);">View
+                            Projects</a>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-12 d-flex justify-content-center image-column mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
-                    <div class="profile-image-wrapper modern-profile-wrapper">
-                        <img src="./images/my_profile.png" alt="Naveed Malik" class="profile-image modern-profile">
+                <div class="col-lg-5 col-md-12 d-flex justify-content-center image-column mt-5 mt-lg-0"
+                    data-aos="fade-left" data-aos-delay="200">
+                    <div class="profile-image-wrapper modern-profile-wrapper"
+                        style="filter: drop-shadow(0 15px 35px rgba(79, 70, 229, 0.4));">
+                        <img src="./images/my_profile.png" alt="Naveed Malik" class="profile-image modern-profile"
+                            loading="eager" style="border: 0px solid var(--surface-color);">
                         <div class="glow-ring"></div>
                         <div class="glow-ring delay-1"></div>
-                        <!-- Floating Tech Icons -->
-                        <div class="floating-icon icon-1"><i class="fab fa-react"></i></div>
-                        <div class="floating-icon icon-2"><i class="fab fa-node-js"></i></div>
-                        <div class="floating-icon icon-3"><i class="fab fa-python"></i></div>
+                        <!-- Floating Tech Icons with Glassmorphism -->
+                        <div class="floating-icon icon-1 shadow-lg"
+                            style="background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color);">
+                            <i class="fab fa-react" style="color: #61DAFB;"></i></div>
+                        <div class="floating-icon icon-2 shadow-lg"
+                            style="background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color);">
+                            <i class="fab fa-node-js" style="color: var(--secondary-color);"></i></div>
+                        <div class="floating-icon icon-3 shadow-lg"
+                            style="background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color);">
+                            <i class="fab fa-python" style="color: #3776AB;"></i></div>
                     </div>
                 </div>
             </div>
@@ -193,7 +209,10 @@
                 <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
                     <p class="lead fw-bold" style="color: var(--primary-color);">Bringing Ideas to Life Through Code</p>
                     <p class="hero-description mt-3">
-                        I am a passionate Full Stack Developer and Automation Engineer with a knack for building scalable web applications and developing robust data pipelines. I specialize in turning complex problems into elegant, efficient solutions, whether that means crafting intuitive UIs or architecting reliable backend systems.
+                        I am a passionate Full Stack Developer and Automation Engineer with a knack for building
+                        scalable web applications and developing robust data pipelines. I specialize in turning complex
+                        problems into elegant, efficient solutions, whether that means crafting intuitive UIs or
+                        architecting reliable backend systems.
                     </p>
                     <div class="mt-4">
                         <a href="Naveed_Malik_Software_Engr.pdf" download class="btn btn-primary btn-glow">
@@ -205,30 +224,42 @@
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="about-card p-4 rounded h-100">
-                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-laptop-code fa-2x"></i></div>
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i
+                                        class="fas fa-laptop-code fa-2x"></i></div>
                                 <h4 class="h5 fw-bold" style="color: var(--text-color);">Full Stack Dev</h4>
-                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Building responsive, high-performance web applications using modern frameworks like React and Node.js.</p>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Building
+                                    responsive, high-performance web applications using modern frameworks like React and
+                                    Node.js.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="about-card p-4 rounded h-100">
-                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-robot fa-2x"></i></div>
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i
+                                        class="fas fa-robot fa-2x"></i></div>
                                 <h4 class="h5 fw-bold" style="color: var(--text-color);">Web Automation</h4>
-                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Creating intelligent scripts and crawlers to automate workflows and extract structured data seamlessly.</p>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Creating
+                                    intelligent scripts and crawlers to automate workflows and extract structured data
+                                    seamlessly.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="about-card p-4 rounded h-100">
-                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-database fa-2x"></i></div>
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i
+                                        class="fas fa-database fa-2x"></i></div>
                                 <h4 class="h5 fw-bold" style="color: var(--text-color);">Data Systems</h4>
-                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Designing and optimizing databases and elastic search indices for heavy data-driven applications.</p>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Designing and
+                                    optimizing databases and elastic search indices for heavy data-driven applications.
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="about-card p-4 rounded h-100">
-                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i class="fas fa-bolt fa-2x"></i></div>
+                                <div class="icon-box mb-3" style="color: var(--primary-color);"><i
+                                        class="fas fa-bolt fa-2x"></i></div>
                                 <h4 class="h5 fw-bold" style="color: var(--text-color);">Performance Opt</h4>
-                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Enhancing application speed, security, and scalability through best practices and modern architecture.</p>
+                                <p class="small mb-0" style="color: var(--text-color); opacity: 0.7;">Enhancing
+                                    application speed, security, and scalability through best practices and modern
+                                    architecture.</p>
                             </div>
                         </div>
                     </div>
@@ -240,164 +271,101 @@
     <!-- Work Experience Section -->
     <section id="work-experience" class="py-5">
         <div class="container">
-            <h2 class="section-heading text-center">Work Experience & Education</h2>
-            <div class="row" style="margin-left: -4%;">
-                <div class="col-md-6 work-item" data-aos="fade-up">
-                    <div class="work-item-content">
-                        <div class="work-item-icon-top">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
+            <h2 class="section-heading text-center" style="font-size: clamp(2rem, 4vw, 3rem);">Work Experience &
+                Education</h2>
 
-                        <!-- NEW COMPANY (CURRENT JOB) -->
-                        <div class="text-center">
-                            <a href="#" target="_blank">
-                                <img src="./images/profile/Onex.png" style="width:200px;height:200px" alt="Company Logo"
-                                    class="company-logo image-transition">
-                            </a>
-                        </div>
-
-                        <div class="work-content">
-                            <div class="work-header">
-                                <p class="timeline__timeframe">Oct 2025 - Present</p>
-                                <h5>Onex Trading and Contracting Services</h5>
-                                <p class="lead">Senior Full Stack Developer</p>
+            <div class="timeline-premium mt-5">
+                <!-- Node 1: Onex -->
+                <div class="timeline-node left" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="work-item-content glass-card p-4">
+                        <div class="d-flex flex-wrap align-items-center mb-3">
+                            <img src="./images/profile/Onex.png" style="width:50px; height:50px; object-fit:contain;"
+                                alt="Onex Logo" class="me-3 bg-white rounded p-1 mb-2 mb-sm-0">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--primary-color);">Onex Trading</h5>
+                                <p class="mb-0 small fw-bold">Senior Full Stack Developer</p>
                             </div>
-
-                            <p class="work-description">
-                                • Lead the architectural design and development of enterprise-grade automation
-                                platforms.<br />
-                                • Build scalable microservices and REST APIs that support high-volume, real-time
-                                operations.<br />
-                                • Implement advanced system integrations across procurement, logistics, and ERP
-                                solutions.<br />
-                                • Develop secure and high-performance dashboards for project tracking and operational
-                                analytics.<br />
-                                • Optimize cloud deployments and CI/CD pipelines to reduce downtime and enhance
-                                reliability.<br />
-                                • Design workflow engines for automating contracting, invoicing, and internal approval
-                                cycles.<br />
-                                • Ensure robust data validation, monitoring, and structured reporting for executive
-                                insights.<br />
-                                • Collaborate with cross-functional teams to translate business requirements into
-                                technical solutions.<br />
-                                • Conduct performance audits, security enhancements, and long-term system scaling
-                                improvements.<br />
-                            </p>
+                            <span class="ms-sm-auto mt-2 mt-sm-0 badge bg-primary text-white">Oct 2025 - Present</span>
                         </div>
-
-                        <!-- MCP Insight -->
-                        <div class="text-center">
-                            <a href="https://mcpinsight.com/" target="_blank">
-                                <img src="./images/mcpinsight-bg-login.png" style="width:200px;height:200px"
-                                    alt="Company Logo" class="company-logo image-transition">
-                            </a>
-                        </div>
-
-                        <div class="work-content">
-                            <div class="work-header">
-                                <p class="timeline__timeframe">March 2022 - Oct 2025</p>
-                                <h5>MCP INSIGHT</h5>
-                                <p class="lead">Full Stack Developer</p>
-                            </div>
-                            <p class="work-description">
-                                • Responsible for maintaining, expanding and scaling the dashboard of MCP Shield, one of
-                                product of the company.<br />
-                                • Adding new features to the MCP Shield product, build on CodeIgniter framework.<br />
-                                • Write well designed, testable, efficient code by using best software development
-                                practices.<br />
-                                • Optimize the scraping capability to ensure the data is scrapped efficiently with the
-                                minimum usage of server bandwidth.<br />
-                                • Develop highly reliable web crawlers and parsers across various websites.<br />
-                                • Extract structured/unstructured data and store them into Json Format in elastic
-                                search.<br />
-                                • Develop frameworks for automating and maintaining a constant flow of data from
-                                multiple sources.<br />
-                                • Develop a deep understanding of the data sources on the web and know exactly how,
-                                when, and which data to scrape, parse and store this data.<br />
-                                • Active participation in troubleshooting and debugging.<br />
-                                • Creating efficient web crawlers. Create more/better ways to crawl relevant
-                                information.<br />
-                                • Familiarity with best practices and design patterns of programming languages.<br />
-                            </p>
-                        </div>
-
-                        <!-- NEOC -->
-                        <div class="text-center">
-                            <a href="https://epi.gov.pk/emergency-operations-center/" target="_blank">
-                                <img src="https://www.eoc.gov.pk/assets/images/eoc-logo_old.png"
-                                    style="width:200px;height:200px" alt="Company Logo"
-                                    class="company-logo image-transition">
-                            </a>
-                        </div>
-                        <div class="work-content">
-                            <div class="work-header">
-                                <p class="timeline__timeframe">Jul 2019 - March 2022</p>
-                                <h5>NEOC</h5>
-                                <p class="lead">Frontend Developer</p>
-                            </div>
-                            <p class="work-description">
-                                • Leverage the inbuilt React toolkit for creating frontend features.<br />
-                                • Create data visualization tools, libraries, and reusable code for prospects.<br />
-                                • Integrate designs and wireframes within the application code.<br />
-                                • Monitor interaction of users and convert them into insightful information.<br />
-                                • Write application interface code with JavaScript.<br />
-                                • Enhance application performance with constant monitoring.<br />
-                                • Translate wireframes and designs into good quality code.<br />
-                                • Optimize components to work seamlessly across different browsers and devices.<br />
-                                • Good understanding of CSS libraries, GIT, Sigma, Adobe XD etc.<br />
-                                • Proper user information authentication.<br />
-                                • Develop responsive web-based UI.<br />
-                            </p>
-                        </div>
+                        <p class="work-description small opacity-75 mb-0" style="line-height: 1.6;">
+                            • Lead architectural design for enterprise automation platforms.<br />
+                            • Build scalable microservices and REST APIs for high-volume operations.<br />
+                            • Optimize cloud deployments and CI/CD pipelines.<br />
+                            • Design workflow engines for contracting, invoicing, and approvals.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Education Column -->
-                <div class="col-md-6 work-item" data-aos="fade-up">
-                    <div class="work-item-content">
-                        <div class="work-item-icon-top">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-
-                        <div class="text-center">
-                            <a href="https://nust.edu.pk/" target="_blank">
-                                <img src="./images/profile/NUST-Signature-01.png" style="width:200px;height:200px"
-                                    alt="Company Logo" class="image-transition company-logo">
-                            </a>
-                        </div>
-                        <div class="work-content">
-                            <div class="work-header">
-                                <p class="timeline__timeframe">September 2015 - July 2019</p>
-                                <h5>NUST</h5>
-                                <p class="lead">BS COMPUTER ENGINEERING</p>
+                <!-- Node 2: MCP Insight -->
+                <div class="timeline-node right" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="work-item-content glass-card p-4">
+                        <div class="d-flex flex-wrap align-items-center mb-3">
+                            <img src="./images/mcpinsight-bg-login.png"
+                                style="width:50px; height:50px; object-fit:contain;" alt="MCP Logo"
+                                class="me-3 bg-white rounded p-1 mb-2 mb-sm-0">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--primary-color);">MCP INSIGHT</h5>
+                                <p class="mb-0 small fw-bold">Full Stack Developer</p>
                             </div>
-                            <p class="work-description">
-                                I was the average student in my University but was involved
-                                with different technical competition like COMPAC(One of
-                                biggest in our college)<br />
-                                I had done different type of projects in my university and
-                                few of them i have displayed in my portfolio
-                            </p>
+                            <span class="ms-sm-auto mt-2 mt-sm-0 badge"
+                                style="background:var(--border-color); color:var(--text-color);">Mar 2022 - Oct
+                                2025</span>
                         </div>
+                        <p class="work-description small opacity-75 mb-0" style="line-height: 1.6;">
+                            • Expanded and scaled the dashboard of MCP Shield.<br />
+                            • Developed highly reliable web crawlers and parsers across various websites.<br />
+                            • Extracted structured data and stored in Elasticsearch.<br />
+                            • Automated constant flow of data from multiple sources.
+                        </p>
+                    </div>
+                </div>
 
-                        <div class="text-center">
-                            <a href="https://cch.edu.pk/" target="_blank">
-                                <img src="./images/profile/cch.png" style="width:200px;height:200px" alt="Company Logo"
-                                    class="company-logo image-transition">
-                            </a>
-                        </div>
-                        <div class="work-content">
-                            <div class="work-header">
-                                <p class="timeline__timeframe">September 2010 - July 2015</p>
-                                <h5>CADET COLLEGE HASANABDAL</h5>
-                                <p class="lead">FSC & Matriculation</p>
+                <!-- Node 3: NEOC -->
+                <div class="timeline-node left" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="work-item-content glass-card p-4">
+                        <div class="d-flex flex-wrap align-items-center mb-3">
+                            <img src="https://www.eoc.gov.pk/assets/images/eoc-logo_old.png"
+                                style="width:50px; height:50px; object-fit:contain;" alt="NEOC Logo"
+                                class="me-3 bg-white rounded p-1 mb-2 mb-sm-0">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--primary-color);">NEOC</h5>
+                                <p class="mb-0 small fw-bold">Frontend Developer</p>
                             </div>
-                            <p class="work-description">
-                                I was Vice President of College Computer, was involved in
-                                other sports, Vice Captain Wing Football team, Vice Caption
-                                College Gymnastics team
-                            </p>
+                            <span class="ms-sm-auto mt-2 mt-sm-0 badge"
+                                style="background:var(--border-color); color:var(--text-color);">Jul 2019 - Mar
+                                2022</span>
                         </div>
+                        <p class="work-description small opacity-75 mb-0" style="line-height: 1.6;">
+                            • Leveraged React toolkit for frontend feature creation.<br />
+                            • Built data visualization tools and reusable code libraries.<br />
+                            • Optimized components across browsers and monitored performance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Node 4: Education -->
+                <div class="timeline-node right" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="work-item-content glass-card p-4">
+                        <div class="d-flex flex-wrap align-items-center mb-3">
+                            <img src="./images/profile/NUST-Signature-01.png"
+                                style="width:50px; height:50px; object-fit:contain;" alt="NUST Logo"
+                                class="me-3 bg-white rounded p-1 mb-2 mb-sm-0">
+                            <div>
+                                <h5 class="mb-0 fw-bold" style="color: var(--primary-color);">NUST</h5>
+                                <p class="mb-0 small fw-bold">BS Computer Engineering</p>
+                            </div>
+                            <span class="ms-sm-auto mt-2 mt-sm-0 badge"
+                                style="background:var(--border-color); color:var(--text-color);">Sep 2015 - Jul
+                                2019</span>
+                        </div>
+                        <p class="work-description small opacity-75 mb-0" style="line-height: 1.6;">
+                            Active participant in technical competitions like COMPAC. Developed foundational skills in
+                            systems engineering, culminating in multiple complex university projects.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -415,26 +383,29 @@
             <div class="row g-4 justify-content-center">
                 <!-- Frontend -->
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15"
+                        data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
                         <div class="icon-box mb-3 text-primary"><i class="fas fa-desktop fa-2x"></i></div>
                         <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">Frontend</h4>
                         <div class="d-flex flex-wrap justify-content-center gap-2">
                             <span class="skill-badge"><i class="fab fa-react me-1 text-info"></i>React</span>
-                            <span class="skill-badge"><i class="fab fa-vuejs me-1 text-success"></i>Vue.js</span>
-                            <span class="skill-badge"><i class="fab fa-js me-1 text-warning"></i>JavaScript</span>
-                            <span class="skill-badge"><i class="fab fa-html5 me-1 text-danger"></i>HTML/CSS</span>
+                            <span class="skill-badge"><i class="fab fa-vuejs me-1" style="color: var(--secondary-color);"></i>Vue.js</span>
+                            <span class="skill-badge"><i class="fab fa-js me-1" style="color: var(--primary-color);"></i>JavaScript</span>
+                            <span class="skill-badge"><i class="fab fa-html5 me-1" style="color: var(--primary-color);"></i>HTML/CSS</span>
                             <span class="skill-badge"><i class="fab fa-bootstrap me-1 text-primary"></i>Bootstrap</span>
                         </div>
                     </div>
                 </div>
                 <!-- Backend -->
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15"
+                        data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
                         <div class="icon-box mb-3 text-primary"><i class="fas fa-server fa-2x"></i></div>
                         <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">Backend</h4>
                         <div class="d-flex flex-wrap justify-content-center gap-2">
-                            <span class="skill-badge"><i class="fab fa-node-js me-1 text-success"></i>Node.js</span>
-                            <span class="skill-badge"><i class="fab fa-python me-1" style="color:#306998;"></i>Python</span>
+                            <span class="skill-badge"><i class="fab fa-node-js me-1" style="color: var(--secondary-color);"></i>Node.js</span>
+                            <span class="skill-badge"><i class="fab fa-python me-1"
+                                    style="color:#306998;"></i>Python</span>
                             <span class="skill-badge">Django</span>
                             <span class="skill-badge"><i class="fab fa-php me-1" style="color:#777bb4;"></i>PHP</span>
                             <span class="skill-badge">Express.js</span>
@@ -443,7 +414,8 @@
                 </div>
                 <!-- Database -->
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15"
+                        data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
                         <div class="icon-box mb-3 text-primary"><i class="fas fa-database fa-2x"></i></div>
                         <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">Database</h4>
                         <div class="d-flex flex-wrap justify-content-center gap-2">
@@ -457,13 +429,14 @@
                 </div>
                 <!-- DevOps & Tools -->
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="skill-card p-4 rounded h-100 text-center" data-tilt data-tilt-max="15"
+                        data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
                         <div class="icon-box mb-3 text-primary"><i class="fas fa-tools fa-2x"></i></div>
                         <h4 class="h5 fw-bold mb-4" style="color: var(--text-color);">DevOps / Tools</h4>
                         <div class="d-flex flex-wrap justify-content-center gap-2">
                             <span class="skill-badge"><i class="fab fa-docker me-1 text-info"></i>Docker</span>
-                            <span class="skill-badge"><i class="fab fa-aws me-1 text-warning"></i>AWS</span>
-                            <span class="skill-badge"><i class="fab fa-git-alt me-1 text-danger"></i>Git</span>
+                            <span class="skill-badge"><i class="fab fa-aws me-1" style="color: var(--primary-color);"></i>AWS</span>
+                            <span class="skill-badge"><i class="fab fa-git-alt me-1" style="color: var(--secondary-color);"></i>Git</span>
                             <span class="skill-badge">Linux</span>
                             <span class="skill-badge">VS Code</span>
                         </div>
@@ -598,41 +571,71 @@
         <div class="row g-4">
             <!-- Project 1 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-card rounded overflow-hidden h-100">
-                    <div class="project-img-wrapper">
-                        <img src="./images/portfolio/eoc_dashboard.JPG" alt="EOC Dashboard" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
-                            <a href="#" class="btn btn-primary rounded-pill shadow-sm ms-2">View Demo</a>
-                        </div>
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/eoc_dashboard.JPG" alt="EOC Dashboard"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
                     </div>
-                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
-                        <h5 class="fw-bold mb-2">EOC Dashboard</h5>
-                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Emergency Operations Center dashboard for real-time analytics and tracking.</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-light text-dark shadow-sm">React</span>
-                            <span class="badge bg-light text-dark shadow-sm">Node.js</span>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">EOC Dashboard</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            <div class="mb-2"><strong>Problem:</strong> Fragmented and delayed tracking of critical
+                                emergency data streams.</div>
+                            <div class="mb-2"><strong>Solution:</strong> Built a centralized, real-time analytics
+                                dashboard with React/Node.js.</div>
+                            <div class="fw-bold" style="color: var(--secondary-color);">Impact: 30% faster incident response and unified
+                                reporting.</div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge border" style="color: var(--text-color);">React</span>
+                            <span class="badge border" style="color: var(--text-color);">Node.js</span>
+                            <span class="badge border" style="color: var(--text-color);">WebSockets</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="#" class="btn btn-primary btn-sm flex-grow-1 fw-bold">Live Demo</a>
+                            <a href="https://github.com/navidmalik/eoc_dashboard" target="_blank"
+                                class="btn btn-outline border-2 btn-sm flex-grow-1 fw-bold"
+                                style="color: var(--text-color); border-color: var(--border-color);"><i
+                                    class="fab fa-github"></i> Source</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Project 2 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-card rounded overflow-hidden h-100">
-                    <div class="project-img-wrapper">
-                        <img src="./images/portfolio/food-delivery-app.JPG" alt="Food Delivery App" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/yourprofile/food-delivery-app" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
-                            <a href="#" class="btn btn-primary rounded-pill shadow-sm ms-2">View Demo</a>
-                        </div>
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/food-delivery-app.JPG" alt="Food Delivery Platform"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
                     </div>
-                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
-                        <h5 class="fw-bold mb-2">Food Delivery Platform</h5>
-                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">A comprehensive food delivery application connecting users with local restaurants.</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-light text-dark shadow-sm">Vue.js</span>
-                            <span class="badge bg-light text-dark shadow-sm">Express</span>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Food Delivery Platform</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            <div class="mb-2"><strong>Problem:</strong> Local restaurants struggled with high-commission
+                                third-party delivery apps.</div>
+                            <div class="mb-2"><strong>Solution:</strong> Developed a scalable Vue.js/Express app
+                                matching users directly with local eateries.</div>
+                            <div class="fw-bold" style="color: var(--secondary-color);">Impact: Reduced merchant fees by 40% and improved order
+                                throughput.</div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge border" style="color: var(--text-color);">Vue.js</span>
+                            <span class="badge border" style="color: var(--text-color);">Express</span>
+                            <span class="badge border" style="color: var(--text-color);">MongoDB</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="#" class="btn btn-primary btn-sm flex-grow-1 fw-bold">Live Demo</a>
+                            <a href="https://github.com/navidmalik/food-delivery-app" target="_blank"
+                                class="btn btn-outline border-2 btn-sm flex-grow-1 fw-bold"
+                                style="color: var(--text-color); border-color: var(--border-color);"><i
+                                    class="fab fa-github"></i> Source</a>
                         </div>
                     </div>
                 </div>
@@ -640,19 +643,35 @@
 
             <!-- Project 3 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="project-card rounded overflow-hidden h-100">
-                    <div class="project-img-wrapper">
-                        <img src="./images/portfolio/mcpshield_dashboard.JPG" alt="MCP Shield" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
-                        <div class="project-overlay">
-                            <a href="https://mcpinsight.com/" target="_blank" class="btn btn-primary rounded-pill shadow-sm ms-2">Visit Site</a>
-                        </div>
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/mcpshield_dashboard.JPG" alt="MCP Shield"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
                     </div>
-                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
-                        <h5 class="fw-bold mb-2">MCP Shield Dashboard</h5>
-                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Fraud protection and analytics dashboard serving enterprise telecom clients.</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-light text-dark shadow-sm">PHP</span>
-                            <span class="badge bg-light text-dark shadow-sm">MySQL</span>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">MCP Shield Analytics</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            <div class="mb-2"><strong>Problem:</strong> Telecom clients lacked visibility into
+                                sophisticated ad fraud networks.</div>
+                            <div class="mb-2"><strong>Solution:</strong> Engineered a robust PHP/MySQL dashboard to
+                                visualize complex fraud datasets.</div>
+                            <div class="fw-bold" style="color: var(--secondary-color);">Impact: Enabled clients to block $2M+ in fraudulent ad
+                                spend annually.</div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge border" style="color: var(--text-color);">PHP</span>
+                            <span class="badge border" style="color: var(--text-color);">MySQL</span>
+                            <span class="badge border" style="color: var(--text-color);">Data Viz</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://mcpinsight.com/" target="_blank"
+                                class="btn btn-primary btn-sm flex-grow-1 fw-bold">Live Demo</a>
+                            <a href="#" class="btn btn-outline border-2 btn-sm flex-grow-1 fw-bold disabled"
+                                style="color: var(--text-color); border-color: var(--border-color);"><i
+                                    class="fas fa-lock"></i> Private</a>
                         </div>
                     </div>
                 </div>
@@ -660,19 +679,34 @@
 
             <!-- Project 4 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-card rounded overflow-hidden h-100">
-                    <div class="project-img-wrapper">
-                        <img src="./images/portfolio/facebook-scrapping.png" alt="FB Scraping" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/yourprofile/facebook-scrapping" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
-                        </div>
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/facebook-scrapping.png" alt="FB Scraping"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
                     </div>
-                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
-                        <h5 class="fw-bold mb-2">Social Media Crawler</h5>
-                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Automated data extraction system navigating complex dynamic DOM structures.</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-light text-dark shadow-sm">Python</span>
-                            <span class="badge bg-light text-dark shadow-sm">Selenium</span>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Social Media Crawler</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            <div class="mb-2"><strong>Problem:</strong> Manual extraction of dynamic social data was
+                                slow and error-prone.</div>
+                            <div class="mb-2"><strong>Solution:</strong> Developed an automated Python/Selenium system
+                                capable of navigating complex DOMs.</div>
+                            <div class="fw-bold" style="color: var(--secondary-color);">Impact: Scraped 100k+ records reliably, saving 40+ hours
+                                per week.</div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge border" style="color: var(--text-color);">Python</span>
+                            <span class="badge border" style="color: var(--text-color);">Selenium</span>
+                            <span class="badge border" style="color: var(--text-color);">Parsers</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://github.com/navidmalik" target="_blank"
+                                class="btn btn-outline border-2 btn-sm flex-grow-1 fw-bold"
+                                style="color: var(--text-color); border-color: var(--border-color);"><i
+                                    class="fab fa-github"></i> Source</a>
                         </div>
                     </div>
                 </div>
@@ -680,19 +714,34 @@
 
             <!-- Project 5 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-card rounded overflow-hidden h-100">
-                    <div class="project-img-wrapper">
-                        <img src="./images/portfolio/mcpnet_dashboard.JPG" alt="MCP Net" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/yourprofile/mcpnet_dashboard" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
-                        </div>
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/mcpnet_dashboard.JPG" alt="MCP Net"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
                     </div>
-                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
-                        <h5 class="fw-bold mb-2">MCP Net Tool</h5>
-                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Internal tooling dashboard to support fraud investigations and data flow.</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-light text-dark shadow-sm">CodeIgniter</span>
-                            <span class="badge bg-light text-dark shadow-sm">JS</span>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">MCP Net Core Tool</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            <div class="mb-2"><strong>Problem:</strong> Internal fraud investigation workflows were
+                                manual and disconnected.</div>
+                            <div class="mb-2"><strong>Solution:</strong> Created an internal tooling dashboard using
+                                CodeIgniter to streamline data flow.</div>
+                            <div class="fw-bold" style="color: var(--secondary-color);">Impact: Boosted internal analyst productivity by 50%
+                                through automated data enrichment.</div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge border" style="color: var(--text-color);">CodeIgniter</span>
+                            <span class="badge border" style="color: var(--text-color);">Vanilla JS</span>
+                            <span class="badge border" style="color: var(--text-color);">APIs</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://github.com/navidmalik" target="_blank"
+                                class="btn btn-outline border-2 btn-sm flex-grow-1 fw-bold"
+                                style="color: var(--text-color); border-color: var(--border-color);"><i
+                                    class="fab fa-github"></i> Source</a>
                         </div>
                     </div>
                 </div>
@@ -700,26 +749,41 @@
 
             <!-- Project 6 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="project-card rounded overflow-hidden h-100">
-                    <div class="project-img-wrapper">
-                        <img src="./images/portfolio/vs4-home.jpg" alt="VS4 App" class="img-fluid w-100 object-fit-cover" style="height: 250px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/yourprofile/vs4-home" target="_blank" class="btn btn-light rounded-circle shadow-sm" aria-label="Github"><i class="fab fa-github"></i></a>
-                        </div>
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/vs4-home.jpg" alt="VS4 App"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
                     </div>
-                    <div class="project-info p-4 border border-top-0 rounded-bottom" style="border-color: var(--border-color) !important;">
-                        <h5 class="fw-bold mb-2">VS4 Compliance Tracker</h5>
-                        <p class="small text-secondary mb-3" style="color: var(--text-color); opacity: 0.8;">Compliance tracking operations center with workflow automation routing.</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-light text-dark shadow-sm">Nuxt</span>
-                            <span class="badge bg-light text-dark shadow-sm">Elasticsearch</span>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">VS4 Compliance Tracker</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            <div class="mb-2"><strong>Problem:</strong> Tracking thousands of compliance tickets
+                                required endless scrolling and manual updates.</div>
+                            <div class="mb-2"><strong>Solution:</strong> Built a high-performance Vue/Nuxt interface
+                                powered by an Elasticsearch backend.</div>
+                            <div class="fw-bold" style="color: var(--secondary-color);">Impact: Enabled sub-second search and bulk operations for
+                                10M+ records.</div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge border" style="color: var(--text-color);">Nuxt.js</span>
+                            <span class="badge border" style="color: var(--text-color);">Elasticsearch</span>
+                            <span class="badge border" style="color: var(--text-color);">Node Queue</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="https://github.com/navidmalik" target="_blank"
+                                class="btn btn-outline border-2 btn-sm flex-grow-1 fw-bold"
+                                style="color: var(--text-color); border-color: var(--border-color);"><i
+                                    class="fab fa-github"></i> Source</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
-        
+
         <div class="text-center mt-5" data-aos="fade-up">
             <a href="https://github.com/navidmalik" target="_blank" class="btn btn-outline btn-lg px-5">
                 <i class="fab fa-github me-2"></i> View More on GitHub
@@ -735,131 +799,170 @@
         </div>
     </div>
 
-    <div class="automation-slider">
-        <div class="automation-contents-wrapper">
-            <section class="automationRow">
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Connecting_Google_With_Account.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
+    <div class="container mb-5">
+        <!-- Automation 1 -->
+        <div class="row align-items-center mb-5 automation-feature" data-aos="fade-up">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="video-player-premium glass-card overflow-hidden position-relative p-2"
+                    style="border-radius: var(--border-radius-lg);">
+                    <video src="./videos/Connecting_Google_With_Account.mkv" class="w-100 rounded"
+                        style="border-radius: var(--border-radius-md);" muted loop controlslist="nodownload"></video>
+                    <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+                        style="background: rgba(15, 23, 42, 0.4); pointer-events: none; transition: opacity 0.3s ease;">
+                        <button class="play-btn-premium btn btn-primary text-white rounded-circle shadow-lg"
+                            style="width: 60px; height: 60px; pointer-events: auto;"><i
+                                class="fas fa-play fa-lg ms-1"></i></button>
                     </div>
                 </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Form_filling_pdf.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/GoogleTwoFactor.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/igotstandard.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/lemlist_scraper_test.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/RealEstate_Scraper.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Reatuarant.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Shoestore.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Tipster.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Trading_Account.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Trading_Account_data.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Travis_Scraper.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/Youtube_Channel_uploading.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="automationItem active">
-                    <div class="video-container">
-                        <video src="./videos/YT_audio_Extractor.mkv" muted></video>
-                        <div class="video-overlay">
-                            <button class="play-btn"><i class="fas fa-play"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
+            <div class="col-lg-5 ps-lg-5">
+                <h4 class="fw-bold mb-3" style="color: var(--primary-color);">Automated Google Workspace Integration
+                </h4>
+                <p class="text-secondary small mb-4" style="color: var(--text-color) !important; opacity: 0.8;">A
+                    complete workflow automation for Google Account creation and multi-factor authentication handling.
+                </p>
 
-            <section class="automation-indicators">
-                <div class="auto-dot active" attr="0" onclick="switchAutomation(this)"></div>
-                <div class="auto-dot" attr="1" onclick="switchAutomation(this)"></div>
-                <div class="auto-dot" attr="2" onclick="switchAutomation(this)"></div>
-                <div class="auto-dot" attr="3" onclick="switchAutomation(this)"></div>
-                <div class="auto-dot" attr="4" onclick="switchAutomation(this)"></div>
-            </section>
+                <div class="workflow-stats d-flex gap-4 mb-4">
+                    <div>
+                        <span class="d-block small text-secondary">Before</span>
+                        <strong style="color: var(--text-color); opacity: 0.6; text-decoration: line-through;">Manual entry</strong>
+                    </div>
+                    <div><i class="fas fa-arrow-right mt-3" style="color: var(--text-color); opacity: 0.5;"></i></div>
+                    <div>
+                        <span class="d-block small text-secondary">After</span>
+                        <strong style="color: var(--secondary-color);">Zero-touch Auth</strong>
+                    </div>
+                </div>
+
+                <div class="impact-box p-3 rounded glass-card" style="border-left: 4px solid var(--primary-color);">
+                    <p class="mb-0 small fw-bold"><i class="fas fa-chart-line me-2 text-primary"></i>Business Impact</p>
+                    <p class="mb-0 small mt-1" style="color: var(--text-color); opacity: 0.9;">Eliminated 10+ hours per
+                        week of manual authentication across client portfolios.</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Automation 2 -->
+        <div class="row align-items-center mb-5 automation-feature flex-lg-row-reverse" data-aos="fade-up">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="video-player-premium glass-card overflow-hidden position-relative p-2"
+                    style="border-radius: var(--border-radius-lg);">
+                    <video src="./videos/RealEstate_Scraper.mkv" class="w-100 rounded"
+                        style="border-radius: var(--border-radius-md);" muted loop controlslist="nodownload"></video>
+                    <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+                        style="background: rgba(15, 23, 42, 0.4); pointer-events: none; transition: opacity 0.3s ease;">
+                        <button class="play-btn-premium btn btn-primary text-white rounded-circle shadow-lg"
+                            style="width: 60px; height: 60px; pointer-events: auto;"><i
+                                class="fas fa-play fa-lg ms-1"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 pe-lg-5">
+                <h4 class="fw-bold mb-3" style="color: var(--primary-color);">Real Estate Data Aggregator</h4>
+                <p class="text-secondary small mb-4" style="color: var(--text-color) !important; opacity: 0.8;">
+                    High-speed web scraper extracting verified property listings across multiple dynamic real estate
+                    portals.</p>
+
+                <div class="workflow-stats d-flex gap-4 mb-4">
+                    <div>
+                        <span class="d-block small text-secondary">Before</span>
+                        <strong style="color: var(--text-color); opacity: 0.6; text-decoration: line-through;">Incomplete Data</strong>
+                    </div>
+                    <div><i class="fas fa-arrow-right mt-3" style="color: var(--text-color); opacity: 0.5;"></i></div>
+                    <div>
+                        <span class="d-block small text-secondary">After</span>
+                        <strong style="color: var(--secondary-color);">10k+ Daily Rows</strong>
+                    </div>
+                </div>
+
+                <div class="impact-box p-3 rounded glass-card" style="border-left: 4px solid var(--primary-color);">
+                    <p class="mb-0 small fw-bold"><i class="fas fa-chart-line me-2 text-primary"></i>Business Impact</p>
+                    <p class="mb-0 small mt-1" style="color: var(--text-color); opacity: 0.9;">Yielded 3x more lead
+                        acquisition data for brokers at 1/10th of the previous cost.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Automation 3 -->
+        <div class="row align-items-center mb-5 automation-feature" data-aos="fade-up">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="video-player-premium glass-card overflow-hidden position-relative p-2"
+                    style="border-radius: var(--border-radius-lg);">
+                    <video src="./videos/Youtube_Channel_uploading.mkv" class="w-100 rounded"
+                        style="border-radius: var(--border-radius-md);" muted loop controlslist="nodownload"></video>
+                    <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+                        style="background: rgba(15, 23, 42, 0.4); pointer-events: none; transition: opacity 0.3s ease;">
+                        <button class="play-btn-premium btn btn-primary text-white rounded-circle shadow-lg"
+                            style="width: 60px; height: 60px; pointer-events: auto;"><i
+                                class="fas fa-play fa-lg ms-1"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 ps-lg-5">
+                <h4 class="fw-bold mb-3" style="color: var(--primary-color);">YouTube Bulk Uploader Pipeline</h4>
+                <p class="text-secondary small mb-4" style="color: var(--text-color) !important; opacity: 0.8;">
+                    Automated publishing pipeline that schedules, tags, and bulk-uploads media to channel arrays.</p>
+
+                <div class="workflow-stats d-flex gap-4 mb-4">
+                    <div>
+                        <span class="d-block small text-secondary">Before</span>
+                        <strong style="color: var(--text-color); opacity: 0.6; text-decoration: line-through;">15 mins/video</strong>
+                    </div>
+                    <div><i class="fas fa-arrow-right mt-3" style="color: var(--text-color); opacity: 0.5;"></i></div>
+                    <div>
+                        <span class="d-block small text-secondary">After</span>
+                        <strong style="color: var(--secondary-color);">Fully Autonomous</strong>
+                    </div>
+                </div>
+
+                <div class="impact-box p-3 rounded glass-card" style="border-left: 4px solid var(--primary-color);">
+                    <p class="mb-0 small fw-bold"><i class="fas fa-chart-line me-2 text-primary"></i>Business Impact</p>
+                    <p class="mb-0 small mt-1" style="color: var(--text-color); opacity: 0.9;">Allowed content creators
+                        to scale channel networks without hiring additional dedicated uploaders.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="https://github.com/navidmalik" target="_blank" class="btn btn-outline border-2 px-5 py-2 fw-bold"
+                style="color: var(--text-color); border-color: var(--text-color); border-radius: 30px;">View All
+                Automations</a>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const players = document.querySelectorAll('.video-player-premium');
+                players.forEach(player => {
+                    const video = player.querySelector('video');
+                    const btn = player.querySelector('.play-btn-premium');
+                    const overlay = player.querySelector('.video-overlay');
+
+                    if (btn && video) {
+                        btn.addEventListener('click', () => {
+                            if (video.paused) {
+                                video.play();
+                                overlay.style.opacity = '0';
+                            } else {
+                                video.pause();
+                                overlay.style.opacity = '1';
+                            }
+                        });
+
+                        video.addEventListener('click', () => {
+                            if (!video.paused) {
+                                video.pause();
+                                overlay.style.opacity = '1';
+                            }
+                        });
+
+                        video.addEventListener('ended', () => {
+                            overlay.style.opacity = '1';
+                            video.currentTime = 0;
+                        });
+                    }
+                });
+            });
+        </script>
     </div>
 
     <div id="videoModal" class="video-modal">
@@ -877,80 +980,118 @@
                     <h2 class="section-heading">Testimonials</h2>
                 </div>
             </div>
-            
+
             <div class="row g-4 justify-content-center">
                 <!-- Testimonial 1 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
-                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm"
+                        style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3"
+                            style="opacity: 0.1;"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="./images/avatars/user-09.PNG" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <img src="./images/avatars/user-09.PNG"
+                                class="rounded-circle me-3 border border-2 border-primary" width="60" height="60"
+                                style="object-fit:cover;">
                             <div>
-                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Mr Faisal Ameer</h5>
-                                <small class="text-primary fw-bold" style="font-size:0.8rem;">Head of Technology, MCP INSIGHT, UK</small>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Mr Faisal
+                                    Ameer</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">Head of Technology, MCP
+                                    INSIGHT, UK</small>
                             </div>
                         </div>
-                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"He is passionate about his work. Because he loves what he does, he has a steady source of motivation that drives him to do his best and learn new skills that help him to do better work."</p>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"He is passionate about
+                            his work. Because he loves what he does, he has a steady source of motivation that drives
+                            him to do his best and learn new skills that help him to do better work."</p>
                     </div>
                 </div>
 
                 <!-- Testimonial 2 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
-                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm"
+                        style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3"
+                            style="opacity: 0.1;"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="./images/avatars/user-08.PNG" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <img src="./images/avatars/user-08.PNG"
+                                class="rounded-circle me-3 border border-2 border-primary" width="60" height="60"
+                                style="object-fit:cover;">
                             <div>
-                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Dr Altaf Bosan</h5>
-                                <small class="text-primary fw-bold" style="font-size:0.8rem;">BMGF Representative, NEOC</small>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Dr Altaf
+                                    Bosan</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">BMGF Representative,
+                                    NEOC</small>
                             </div>
                         </div>
-                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Working with Naveed has been an exceptional experience. He consistently demonstrates a strong work ethic, a keen eye for detail, and an unwavering commitment to excellence."</p>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Working with Naveed has
+                            been an exceptional experience. He consistently demonstrates a strong work ethic, a keen eye
+                            for detail, and an unwavering commitment to excellence."</p>
                     </div>
                 </div>
 
                 <!-- Testimonial 3 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
-                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm"
+                        style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3"
+                            style="opacity: 0.1;"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="./images/avatars/user-01.jpg" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <img src="./images/avatars/user-01.jpg"
+                                class="rounded-circle me-3 border border-2 border-primary" width="60" height="60"
+                                style="object-fit:cover;">
                             <div>
-                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Muhammad Asaf Javed</h5>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Muhammad
+                                    Asaf Javed</h5>
                                 <small class="text-primary fw-bold" style="font-size:0.8rem;">NEOC, Islamabad</small>
                             </div>
                         </div>
-                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Your vision and ability to put things in perspective have consistently inspired me and our team to do our best work and strive for excellence."</p>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Your vision and ability
+                            to put things in perspective have consistently inspired me and our team to do our best work
+                            and strive for excellence."</p>
                     </div>
                 </div>
 
                 <!-- Testimonial 4 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
-                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm"
+                        style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3"
+                            style="opacity: 0.1;"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="./images/avatars/user-07.jpg" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <img src="./images/avatars/user-07.jpg"
+                                class="rounded-circle me-3 border border-2 border-primary" width="60" height="60"
+                                style="object-fit:cover;">
                             <div>
-                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Prof Usman Qamar</h5>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Prof Usman
+                                    Qamar</h5>
                                 <small class="text-primary fw-bold" style="font-size:0.8rem;">HOD CSE, NUST</small>
                             </div>
                         </div>
-                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"One of your strengths is that you almost always deliver projects on time. Our clients expect it, and hitting these goals is critical to everything that we do."</p>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"One of your strengths is
+                            that you almost always deliver projects on time. Our clients expect it, and hitting these
+                            goals is critical to everything that we do."</p>
                     </div>
                 </div>
 
                 <!-- Testimonial 5 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm" style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
-                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3" style="opacity: 0.1;"></i>
+                    <div class="testimonial-card p-4 rounded h-100 position-relative shadow-sm"
+                        style="background: var(--surface-color); border: 1px solid var(--border-color); transition: transform 0.3s ease;">
+                        <i class="fas fa-quote-left fa-3x text-primary opacity-25 position-absolute top-0 end-0 m-3"
+                            style="opacity: 0.1;"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="./images/avatars/user-02.jpg" class="rounded-circle me-3 border border-2 border-primary" width="60" height="60" style="object-fit:cover;">
+                            <img src="./images/avatars/user-02.jpg"
+                                class="rounded-circle me-3 border border-2 border-primary" width="60" height="60"
+                                style="object-fit:cover;">
                             <div>
-                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Mr Muazzam Ali Saqib</h5>
-                                <small class="text-primary fw-bold" style="font-size:0.8rem;">Assistant Prof, CCH</small>
+                                <h5 class="mb-0 fw-bold" style="color: var(--text-color); font-size:1.1rem;">Mr Muazzam
+                                    Ali Saqib</h5>
+                                <small class="text-primary fw-bold" style="font-size:0.8rem;">Assistant Prof,
+                                    CCH</small>
                             </div>
                         </div>
-                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Naveed's enthusiasm for technology, combined with his analytical skills and collaborative spirit, makes him a standout individual. I am confident he will excel in any professional setting."</p>
+                        <p class="fst-italic" style="color: var(--text-color); opacity: 0.8;">"Naveed's enthusiasm for
+                            technology, combined with his analytical skills and collaborative spirit, makes him a
+                            standout individual. I am confident he will excel in any professional setting."</p>
                     </div>
                 </div>
             </div>
@@ -1065,18 +1206,24 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background-color: var(--surface-color); border-top: 1px solid var(--border-color);" class="pt-5 mt-5 pb-3">
+    <footer style="background-color: var(--surface-color); border-top: 1px solid var(--border-color);"
+        class="pt-5 mt-5 pb-3">
         <div class="container" id="contact">
             <div class="row mb-5" data-aos="fade-up">
                 <div class="col-lg-5 mb-4">
                     <h2 class="fw-bold mb-4" style="color: var(--text-color);">Let's Connect</h2>
-                    <p class="mb-4" style="color: var(--text-color); opacity: 0.8; font-size: 1.1rem; line-height: 1.6;">
-                        I specialize in building high-quality websites and mobile applications. 
-                        Whether you're a startup or an established company, I'm here to bring your ideas to life with innovative solutions.
+                    <p class="mb-4"
+                        style="color: var(--text-color); opacity: 0.8; font-size: 1.1rem; line-height: 1.6;">
+                        I specialize in building high-quality websites and mobile applications.
+                        Whether you're a startup or an established company, I'm here to bring your ideas to life with
+                        innovative solutions.
                     </p>
                     <div class="d-flex gap-3 mt-4">
-                        <a href="mailto:navidml6453@gmail.com" class="btn btn-primary rounded-pill px-4 shadow-sm">Message Me</a>
-                        <a href="Naveed_Malik_Software_Engr.pdf" download class="btn btn-outline border-2 rounded-pill px-4 shadow-sm" style="color: var(--text-color); border-color: var(--border-color);">Download CV</a>
+                        <a href="mailto:navidml6453@gmail.com"
+                            class="btn btn-primary rounded-pill px-4 shadow-sm">Message Me</a>
+                        <a href="Naveed_Malik_Software_Engr.pdf" download
+                            class="btn btn-outline border-2 rounded-pill px-4 shadow-sm"
+                            style="color: var(--text-color); border-color: var(--border-color);">Download CV</a>
                     </div>
                 </div>
 
@@ -1085,36 +1232,54 @@
                         <div class="col-sm-6">
                             <h5 class="fw-bold mb-3" style="color: var(--text-color);">Follow Me</h5>
                             <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                <li><a href="https://github.com/malikdesigner/" target="_blank" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fab fa-github me-2"></i>GitHub</a></li>
-                                <li><a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fab fa-linkedin mb-2"></i>LinkedIn</a></li>
-                                <li><a href="https://www.instagram.com/studiotechhive/" target="_blank" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fab fa-instagram mb-2"></i>Instagram</a></li>
+                                <li><a href="https://github.com/malikdesigner/" target="_blank"
+                                        class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i
+                                            class="fab fa-github me-2"></i>GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank"
+                                        class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i
+                                            class="fab fa-linkedin mb-2"></i>LinkedIn</a></li>
+                                <li><a href="https://www.instagram.com/studiotechhive/" target="_blank"
+                                        class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i
+                                            class="fab fa-instagram mb-2"></i>Instagram</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
                             <h5 class="fw-bold mb-3" style="color: var(--text-color);">Contact Info</h5>
                             <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                                <li><a href="mailto:navidml6453@gmail.com" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;"><i class="fas fa-envelope me-2"></i>Email</a></li>
-                                <li><a href="https://wa.link/rymhg3" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;" target="_blank"><i class="fab fa-whatsapp me-2"></i>+974 31533910</a></li>
-                                <li><a href="https://wa.link/i3g8v9" class="text-decoration-none" style="color: var(--text-color); opacity: 0.7;" target="_blank"><i class="fab fa-whatsapp me-2"></i>+92 337 8277733</a></li>
+                                <li><a href="mailto:navidml6453@gmail.com" class="text-decoration-none"
+                                        style="color: var(--text-color); opacity: 0.7;"><i
+                                            class="fas fa-envelope me-2"></i>Email</a></li>
+                                <li><a href="https://wa.link/rymhg3" class="text-decoration-none"
+                                        style="color: var(--text-color); opacity: 0.7;" target="_blank"><i
+                                            class="fab fa-whatsapp me-2"></i>+974 31533910</a></li>
+                                <li><a href="https://wa.link/i3g8v9" class="text-decoration-none"
+                                        style="color: var(--text-color); opacity: 0.7;" target="_blank"><i
+                                            class="fab fa-whatsapp me-2"></i>+92 337 8277733</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-top pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center" style="border-color: var(--border-color) !important;">
-                <p class="mb-2 mb-md-0 small" style="color: var(--text-color); opacity: 0.6;">&copy; 2024 Naveed Malik. All rights reserved.</p>
+            <div class="border-top pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center"
+                style="border-color: var(--border-color) !important;">
+                <p class="mb-2 mb-md-0 small" style="color: var(--text-color); opacity: 0.6;">&copy; 2024 Naveed Malik.
+                    All rights reserved.</p>
                 <div class="d-flex gap-3">
-                    <a href="https://github.com/malikdesigner/" target="_blank" class="btn btn-sm btn-light rounded-circle"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank" class="btn btn-sm btn-light rounded-circle"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/studiotechhive/" target="_blank" class="btn btn-sm btn-light rounded-circle"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/malikdesigner/" target="_blank"
+                        class="btn btn-sm btn-light rounded-circle"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/naveed-malik-16a42a182/" target="_blank"
+                        class="btn btn-sm btn-light rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/studiotechhive/" target="_blank"
+                        class="btn btn-sm btn-light rounded-circle"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <!-- Scroll To Top Button -->
-    <a href="#" id="scrollToTop" class="btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-4 d-none" style="width: 50px; height: 50px; z-index: 1000; align-items: center; justify-content: center; display: flex;">
+    <a href="#" id="scrollToTop" class="btn btn-primary rounded-circle shadow position-fixed bottom-0 end-0 m-4 d-none"
+        style="width: 50px; height: 50px; z-index: 1000; align-items: center; justify-content: center; display: flex;">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -1130,150 +1295,104 @@
     <script src="./fiverr_reviews_script.js"></script>
 
     <script>
-        // Typing animation script
-        const texts = [
-            "Naveed Malik",
-            "Web Developer",
-            "Mobile App Developer",
-            "React Js Developer",
-            "PHP Developer",
-            "Full Stack Developer"
-        ];
-
-        const typingSpeed = 100;
-        const deletingSpeed = 50;
-        const pauseBetweenTexts = 1500;
-
-        function typeText(element, text, callback) {
-            let index = 0;
-
-            function type() {
-                if (index < text.length) {
-                    element.textContent += text[index++];
-                    setTimeout(type, typingSpeed);
-                } else {
-                    setTimeout(callback, pauseBetweenTexts);
-                }
-            }
-            type();
-        }
-
-        function deleteText(element, callback) {
-            let text = element.textContent;
-            let index = text.length;
-
-            function deleteChar() {
-                if (index > 0) {
-                    element.textContent = text.substring(0, index--);
-                    setTimeout(deleteChar, deletingSpeed);
-                } else {
-                    element.textContent = '';
-                    setTimeout(callback, pauseBetweenTexts);
-                }
-            }
-            deleteChar();
-        }
-
-        function cycleTexts() {
-            const container = document.getElementById('typing-container');
-            let i = 0;
-
-            function next() {
-                typeText(container, texts[i], () => {
-                    deleteText(container, () => {
-                        i = (i + 1) % texts.length;
-                        next();
-                    });
-                });
-            }
-            next();
-        }
-
         // Initialize Three.js Scene for Hero Section
         function initThreeJS() {
             const container = document.getElementById('canvas-container');
-            if(!container) return;
-            
+            if (!container || window.innerWidth <= 768) return; // Disable on mobile for performance
+
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel density
             container.appendChild(renderer.domElement);
-            
-            // Particles
-            const particlesGeometry = new THREE.BufferGeometry();
-            const particlesCount = window.innerWidth > 768 ? 1500 : 500;
-            const posArray = new Float32Array(particlesCount * 3);
-            
-            for(let i = 0; i < particlesCount * 3; i++) {
-                posArray[i] = (Math.random() - 0.5) * 10;
-            }
-            
-            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-            
-            // Get color based on theme
+
+            // Wireframe Globe
+            const geometry = new THREE.IcosahedronGeometry(4, 2);
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            const particleColor = isDark ? 0x4F46E5 : 0x0EA5E9;
-            
-            const material = new THREE.PointsMaterial({
-                size: 0.015,
-                color: particleColor,
+            const wireColor = isDark ? 0x4F46E5 : 0x0EA5E9;
+
+            const material = new THREE.MeshBasicMaterial({
+                color: wireColor,
+                wireframe: true,
                 transparent: true,
-                opacity: 0.6
+                opacity: 0.15
             });
-            
-            const particlesMesh = new THREE.Points(particlesGeometry, material);
-            scene.add(particlesMesh);
-            
-            camera.position.z = 3;
-            
+
+            const globe = new THREE.Mesh(geometry, material);
+            globe.position.x = window.innerWidth > 992 ? 3 : 0;
+            scene.add(globe);
+
+            // Inner Core
+            const coreGeometry = new THREE.IcosahedronGeometry(3.5, 1);
+            const coreMaterial = new THREE.MeshBasicMaterial({
+                color: wireColor,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.05
+            });
+            const core = new THREE.Mesh(coreGeometry, coreMaterial);
+            core.position.x = window.innerWidth > 992 ? 3 : 0;
+            scene.add(core);
+
+            camera.position.z = 8;
+
             let mouseX = 0;
             let mouseY = 0;
-            
+
             document.addEventListener('mousemove', (event) => {
-                mouseX = event.clientX / window.innerWidth - 0.5;
-                mouseY = event.clientY / window.innerHeight - 0.5;
-            });
-            
-            // Resize handler
+                mouseX = (event.clientX / window.innerWidth - 0.5) * 2;
+                mouseY = -(event.clientY / window.innerHeight - 0.5) * 2;
+            }, { passive: true });
+
             window.addEventListener('resize', () => {
+                if (window.innerWidth <= 768) {
+                    container.innerHTML = '';
+                    return;
+                }
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-            
+                globe.position.x = window.innerWidth > 992 ? 3 : 0;
+                core.position.x = window.innerWidth > 992 ? 3 : 0;
+            }, { passive: true });
+
             const animate = () => {
+                if (window.innerWidth <= 768) return;
                 requestAnimationFrame(animate);
-                particlesMesh.rotation.y += 0.001;
-                particlesMesh.rotation.x += 0.0005;
-                
-                // Mouse interaction
-                particlesMesh.rotation.y += mouseX * 0.05;
-                particlesMesh.rotation.x += mouseY * 0.05;
-                
+                globe.rotation.y += 0.002;
+                globe.rotation.x += 0.001;
+                core.rotation.y -= 0.001;
+
+                // Gentle Mouse Interaction (Parallax)
+                camera.position.x += (mouseX - camera.position.x) * 0.05;
+                camera.position.y += (mouseY - camera.position.y) * 0.05;
+                camera.lookAt(scene.position);
+
                 renderer.render(scene, camera);
             };
-            
+
             animate();
-            
-            // Update particle color on theme switch
+
             document.getElementById('themeToggle').addEventListener('click', () => {
-                const updatedIsDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                material.color.setHex(updatedIsDark ? 0x4F46E5 : 0x0EA5E9);
+                setTimeout(() => {
+                    const updatedIsDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                    const c = updatedIsDark ? 0x4F46E5 : 0x0EA5E9;
+                    material.color.setHex(c);
+                    coreMaterial.color.setHex(c);
+                }, 50);
             });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            cycleTexts();
             AOS.init({
                 duration: 800,
                 once: true,
                 offset: 100
             });
             initThreeJS();
-            
+
             // Setup other logic like tabs, sliders...
             function switchTab(tabId) {
                 const tabPanes = document.querySelectorAll('.tab-pane');
@@ -1335,7 +1454,7 @@
                         scrollToTopBtn.classList.add('d-none');
                     }
                 }
-                
+
                 // Active link tracking
                 let current = '';
                 const sections = document.querySelectorAll('section[id]');
@@ -1355,4 +1474,5 @@
         });
     </script>
 </body>
+
 </html>

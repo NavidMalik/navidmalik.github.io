@@ -76,7 +76,7 @@ body {
 }
 
 .play-btn {
-  background: #cf1767;
+  background: var(--primary-color);
   border: none;
   color: #fff;
   width: 70px;
@@ -89,7 +89,7 @@ body {
 
 .play-btn:hover {
   transform: scale(1.2);
-  background: #ff1493;
+  background: var(--secondary-color);
 }
 
 .automation-indicators {
@@ -144,7 +144,7 @@ body {
 }
 
 .close-modal:hover {
-  color: #cf1767;
+  color: var(--primary-color);
 }
 
 .modal-content {

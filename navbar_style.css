@@ -29,7 +29,7 @@
 }
 
 .brand-highlight {
-  color: #cf1767;
+  color: var(--primary-color);
   margin-left: 5px;
   position: relative;
 }
@@ -41,7 +41,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #cf1767;
+  background: var(--primary-color);
   transition: width 0.3s ease;
 }
 
@@ -80,7 +80,7 @@
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #cf1767, #ff1493);
+  background: var(--primary-gradient);
   transition: width 0.3s ease;
 }
 
@@ -89,12 +89,12 @@
 }
 
 .nav-link-modern:hover {
-  color: #cf1767 !important;
+  color: var(--primary-color) !important;
   transform: translateY(-3px);
 }
 
 .nav-link-modern.active {
-  color: #cf1767 !important;
+  color: var(--primary-color) !important;
 }
 
 .nav-link-modern.active .nav-underline {
@@ -130,7 +130,7 @@
   transform: translate(-50%, -50%) scale(0);
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #cf1767, #ff1493);
+  background: var(--primary-gradient);
   border-radius: 50%;
   transition: transform 0.3s ease;
   z-index: 0;
@@ -148,7 +148,7 @@
 }
 
 .social-link:hover {
-  border-color: #cf1767;
+  border-color: var(--primary-color);
   transform: translateY(-5px) rotate(360deg);
 }
 
@@ -158,18 +158,18 @@
 
 /* Custom Toggler */
 .custom-toggler {
-  border: 2px solid #cf1767;
+  border: 2px solid var(--primary-color);
   padding: 0.5rem;
   transition: all 0.3s ease;
 }
 
 .custom-toggler:hover {
-  background: #cf1767;
+  background: var(--primary-color);
   transform: scale(1.1);
 }
 
 .custom-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(207, 23, 103, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.5);
 }
 
 /* Responsive */
@@ -250,5 +250,11 @@
   background: var(--primary-gradient);
 }
 .social-link i {
-  color: var(--text-color);
+  color: var(--text-color) !important;
+}
+.social-link {
+  border-color: var(--border-color) !important;
+}
+.theme-toggle-btn i {
+  color: var(--text-color) !important;
 }

@@ -9,7 +9,7 @@
     /* Brand Colors */
     --primary-color: #4F46E5; /* Indigo */
     --secondary-color: #0EA5E9; /* Sky Blue */
-    --accent-color: #cf1767; /* Existing pink/red for compatibility */
+    --accent-color: var(--secondary-color); /* Updated for unified professional palette */
     --primary-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     
     /* Spacing & Borders */
@@ -22,22 +22,38 @@
 
 [data-theme="dark"] {
     --bg-color: #0f172a;
+    --bg-gradient: radial-gradient(circle at top right, #1e1b4b 0%, #0f172a 60%);
     --text-color: #f8fafc;
-    --surface-color: #1e293b;
-    --border-color: #334155;
-    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    --box-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --surface-color: rgba(30, 41, 59, 0.65);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --box-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+    --backdrop-blur: blur(12px);
 }
 
 /* General Styles */
 body {
     scroll-behavior: smooth;
-    background-color: var(--bg-color);
+    background: var(--bg-gradient, var(--bg-color));
+    background-attachment: fixed;
     color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Fluid Typography */
+.text-fluid-title {
+    font-size: clamp(2.5rem, 6vw + 1rem, 5.5rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+.text-fluid-subtitle {
+    font-size: clamp(1.1rem, 2vw + 0.5rem, 1.5rem) !important;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.9;
+}
 
 /* Navbar Styles */
 .navbar-nav .nav-link {
@@ -56,13 +72,13 @@ body {
 /* Social Media Icons */
 .navbar-nav.ms-auto .nav-item .nav-link i {
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--text-color);
     margin-left: 10px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-nav.ms-auto .nav-item .nav-link i:hover {
-    color: #cf1767;
+    color: var(--primary-color);
     transform: scale(1.2);
 }
 
@@ -202,11 +218,11 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    box-shadow: var(--box-shadow);
+    box-shadow: none !important;
     animation: morph 8s ease-in-out infinite, floatProfile 6s ease-in-out infinite;
     z-index: 2;
     position: relative;
-    border: 4px solid var(--surface-color);
+    border: none !important;
 }
 
 .glow-ring {
@@ -460,7 +476,7 @@ body {
     width: 100%;
     height: 3px;
     /* Thickness of the underline */
-    background-color: #cf1767;
+    background-color: var(--primary-color);
     /* Underline color */
 }
 
@@ -557,7 +573,7 @@ p.lead {
 }
 
 .work-item-content {
-    border-left: 3px solid #cf1767;
+    border-left: 3px solid var(--primary-color);
     padding-left: 20px;
     margin-left: 10px;
     position: relative;
@@ -606,7 +622,7 @@ p.lead {
     top: -3px;
     left: 0;
     width: 25%;
-    border-top: 3px solid #cf1767;
+    border-top: 3px solid var(--primary-color);
 }
 
 .work-item .company-logo {
@@ -755,7 +771,7 @@ p.lead {
     width: 100%;
     height: 3px;
     /* Thickness of the underline */
-    background-color: #cf1767;
+    background-color: var(--primary-color);
     /* Underline color */
 }
 
@@ -778,13 +794,13 @@ p.lead {
 }
 
 .btn-primary.active {
-    background-color: #e91e63;
+    background-color: var(--primary-color);
     /* Customize the background color for the active button */
-    border-color: #e91e63;
+    border-color: var(--primary-color);
 }
 
 .btn-group-vertical .btn:hover {
-    background-color: #e91e63;
+    background-color: var(--primary-color);
     transform: scale(1.05); /* Slightly enlarges the text on hover */
 
     /* Hover color */
@@ -831,7 +847,7 @@ p.lead {
 .progress-bar {
     height: 100%;
     width: 0;
-    background-color: #cf1767;
+    background: var(--primary-gradient);
     transition: width 1s ease-in-out;
 }
 
@@ -879,7 +895,7 @@ p.lead {
 }
 
 .s-services a {
-    color: #cf1767;
+    color: var(--primary-color);
 }
 
 .s-services a:hover,
@@ -925,7 +941,7 @@ p.lead {
     font-size: 4rem;
     /* Adjusted font size */
     line-height: 1;
-    color: #cf1767;
+    color: var(--secondary-color);
 }
 
 @media screen and (max-width: 1200px) {
@@ -1133,7 +1149,7 @@ footer {
 }
 
 .social-icon:hover {
-    color: #cf1767;
+    color: var(--primary-color);
     transform: scale(1.2);
     /* Change icon color on hover */
 
@@ -1175,8 +1191,8 @@ footer {
 
 /* Message Me Button Styles */
 .message_me {
-    background: hsla(12, 75%, 45%, 1);
-    border: 2px solid hsla(12, 75%, 45%, 1);
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
     color: #f0f0f0;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -1184,8 +1200,8 @@ footer {
 }
 
 .message_me:hover {
-    background: hsla(12, 75%, 55%, 1);
-    border: 2px solid hsla(12, 75%, 45%, 1);
+    background: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     color: white;
     transform: scale(1.05); /* Slightly enlarges the text on hover */
 
@@ -1232,11 +1248,86 @@ footer {
     color: #a5a8a5;
     text-decoration: none;
 }
-p {
-    transition: color 0.3s ease, transform 0.3s ease;
+
+/* Glass Card Utility */
+.glass-card {
+    background: var(--surface-color);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+    filter: brightness(1.1);
 }
 
-p:hover {
-    color: #cf1767; /* Change to any color you prefer */
-    transform: scale(1.05); /* Slightly enlarges the text on hover */
+/* Vertical Timeline Premium */
+.timeline-premium {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.timeline-premium::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--primary-color);
+    opacity: 0.3;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+.timeline-node {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+}
+.timeline-node.left { left: 0; }
+.timeline-node.right { left: 50%; }
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--surface-color);
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    top: 30px;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+    transition: all 0.3s ease;
+}
+.timeline-node:hover .timeline-dot {
+    background-color: var(--primary-color);
+    transform: scale(1.3);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+.timeline-node.right .timeline-dot {
+    left: -10px;
+}
+@media screen and (max-width: 768px) {
+  .timeline-premium::after { left: 20px; }
+  .timeline-node { width: 100%; padding-left: 50px; padding-right: 15px; }
+  .timeline-node.right { left: 0; }
+  .timeline-node.left .timeline-dot, .timeline-node.right .timeline-dot {
+      left: 10px;
+  }
+}
+
+/* Global fixes for Dark Mode Readability & Component Polishing */
+.text-secondary {
+    color: var(--text-color) !important;
+    opacity: 0.8 !important;
+}
+
+.small, small {
+    color: var(--text-color) !important;
+    opacity: 0.85 !important;
 }
