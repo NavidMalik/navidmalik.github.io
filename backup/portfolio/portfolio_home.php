@@ -68,7 +68,7 @@
             </div>
             <div class="portfolioItem active">
                 <div class="image-container">
-                    <img src="./images/portfolio/pinterest-scrapping.JPG" alt="Project 1">
+                    <img src="./images/portfolio/pinterest-scrapping.png" alt="Project 1">
                     <div class="overlay">
                         <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>
@@ -88,7 +88,7 @@
             </div>
             <div class="portfolioItem active">
                 <div class="image-container">
-                    <img src="./images/portfolio/twitter_to_json.webp" alt="Project 1">
+                    <img src="./images/portfolio/twitter_to_json.png" alt="Project 1">
                     <div class="overlay">
                         <a href="https://github.com/yourprofile/eoc_dashboard" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>

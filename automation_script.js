@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="video-player-premium glass-card overflow-hidden position-relative p-2"
                     style="border-radius: var(--border-radius-lg);">
                     <video src="./videos/${auto.video}" class="w-100 rounded"
-                        style="border-radius: var(--border-radius-md);" muted loop controlslist="nodownload"></video>
+                        style="border-radius: var(--border-radius-md);" autoplay muted loop playsinline controlslist="nodownload"></video>
                     <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
                         style="background: rgba(15, 23, 42, 0.4); pointer-events: none; transition: opacity 0.3s ease;">
                         <button class="play-btn-premium btn btn-primary text-white rounded-circle shadow-lg"
@@ -70,6 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
                   overlay.style.opacity = '1';
               }
           });
+          video.addEventListener('play', () => {
+              overlay.style.opacity = '0';
+          });
+          video.addEventListener('pause', () => {
+              overlay.style.opacity = '1';
+          });
           video.addEventListener('click', () => {
               if (!video.paused) {
                   video.pause();
@@ -80,6 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
               overlay.style.opacity = '1';
               video.currentTime = 0;
           });
+          // If autoplay already fired before listeners were attached
+          if (!video.paused) overlay.style.opacity = '0';
       }
   });
 });
