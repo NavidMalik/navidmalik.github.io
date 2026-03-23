@@ -16,8 +16,8 @@
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
     --border-radius-lg: 16px;
-    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --box-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 1);
 }
 
 [data-theme="dark"] {
@@ -26,8 +26,8 @@
     --text-color: #f8fafc;
     --surface-color: rgba(30, 41, 59, 0.65);
     --border-color: rgba(255, 255, 255, 0.08);
-    --box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    --box-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+    --box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+    --box-shadow-hover: 0 16px 48px -4px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.25);
     --backdrop-blur: blur(12px);
 }
 
@@ -520,7 +520,7 @@ p.lead {
     font-size: xx-large;
     line-height: 1.5;
     margin-bottom: 1.6rem;
-    color: #000000;
+    color: var(--text-color);
 }
 
 @media screen and (max-width: 1200px) {
@@ -562,7 +562,7 @@ p.lead {
     text-transform: uppercase;
     letter-spacing: .3rem;
     margin-bottom: .8rem;
-    color: #000000;
+    color: var(--text-color);
 }
 
 /* Work Experience Section Styles */
@@ -1006,7 +1006,7 @@ p.lead {
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.4;
-    color: #000;
+    color: var(--text-color);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -1256,6 +1256,8 @@ footer {
     border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 .glass-card:hover {

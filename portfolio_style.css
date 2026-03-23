@@ -133,5 +133,5 @@ body {
   font-family: "Frank Ruhl Libre", serif;
   font-size: 5.4rem;
   font-weight: 400;
-  color: #000000;
+  color: var(--text-color);
 }

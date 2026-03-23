@@ -150,49 +150,60 @@
     </script>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <!-- 3D Canvas Background -->
-        <div id="canvas-container" class="d-none d-md-block"></div>
-
+    <section id="home" class="hero-section position-relative overflow-hidden" style="min-height: 100vh; display: flex; align-items: center; background: transparent;">
         <div class="container hero-content-wrapper position-relative" style="z-index: 2;">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-7 col-md-12 text-content hero-text" data-aos="fade-right">
-                    <h5 class="greeting-text fw-bold text-uppercase tracking-wide" style="letter-spacing: 2px;">Hello, I
-                        am Naveed Malik</h5>
-                    <h1 class="text-fluid-title py-2" style="color: var(--text-color);">Expert in Automation, Web
-                        Scraping, and Scalable Systems.</h1>
-                    <p class="text-fluid-subtitle mt-3 col-lg-10">
-                        I am dedicated to engineering robust data pipelines, intelligent automation scripts, and
-                        scalable full-stack applications that drive real business value.
+            <div class="row align-items-center w-100">
+                
+                <!-- Left Content -->
+                <div class="col-lg-6 col-md-12 text-content hero-text" data-aos="fade-right">
+                    <h6 class="text-uppercase fw-bold mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 1rem;">HELLO, I AM NAVEED MALIK</h6>
+                    <h1 class="display-3 fw-bolder mt-0 mb-4" style="color: var(--text-color); font-family: 'Poppins', sans-serif; letter-spacing: -1px; min-height: 1.2em;">
+                        <span id="typing-container"></span><span class="typing-cursor ms-1" style="color: var(--primary-color);">|</span>
+                    </h1>
+                    <style>
+                    .typing-cursor { animation: blink 1s step-end infinite; font-weight: 300; }
+                    @keyframes blink { 50% { opacity: 0; } }
+                    </style>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-color); opacity: 0.8; max-width: 90%;">
+                        I am dedicated to engineering robust data pipelines, intelligent automation scripts, and scalable full-stack applications that drive real business value.
                     </p>
                     <div class="hero-buttons mt-5 d-flex flex-wrap gap-3">
-                        <a href="#contact" class="btn btn-primary btn-glow px-5 py-3 rounded-pill fw-bold shadow-lg"
-                            style="font-size: 1.1rem;">Hire Me</a>
-                        <a href="#portfolio" class="btn btn-outline border-2 px-5 py-3 rounded-pill fw-bold"
-                            style="font-size: 1.1rem; color: var(--text-color); border-color: var(--text-color);">View
-                            Projects</a>
+                        <a href="#contact" class="btn btn-primary rounded-pill px-5 py-3 fw-bold hero-btn-hire text-white" 
+                           style="background: linear-gradient(90deg, #4F46E5, #0EA5E9); border: none; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3); font-size: 0.95rem; letter-spacing: 1px;">HIRE ME</a>
+                        <a href="#portfolio" class="btn btn-outline border-2 rounded-pill px-5 py-3 fw-bold hero-btn-view" 
+                           style="color: var(--text-color); border-color: var(--text-color); background: transparent; font-size: 0.95rem; letter-spacing: 1px;">VIEW PROJECTS</a>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-12 d-flex justify-content-center image-column mt-5 mt-lg-0"
-                    data-aos="fade-left" data-aos-delay="200">
-                    <div class="profile-image-wrapper modern-profile-wrapper"
-                        style="filter: drop-shadow(0 15px 35px rgba(79, 70, 229, 0.4));">
-                        <img src="./images/my_profile.png" alt="Naveed Malik" class="profile-image modern-profile"
-                            loading="eager" style="border: 0px solid var(--surface-color);">
-                        <div class="glow-ring"></div>
-                        <div class="glow-ring delay-1"></div>
-                        <!-- Floating Tech Icons with Glassmorphism -->
-                        <div class="floating-icon icon-1 shadow-lg"
-                            style="background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color);">
-                            <i class="fab fa-react" style="color: #61DAFB;"></i></div>
-                        <div class="floating-icon icon-2 shadow-lg"
-                            style="background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color);">
-                            <i class="fab fa-node-js" style="color: var(--secondary-color);"></i></div>
-                        <div class="floating-icon icon-3 shadow-lg"
-                            style="background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color);">
-                            <i class="fab fa-python" style="color: #3776AB;"></i></div>
+
+                <!-- Right Content (Image + Glowing Sphere) -->
+                <div class="col-lg-6 col-md-12 position-relative d-flex justify-content-center align-items-center mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200" style="min-height: 500px;">
+                    <!-- 3D Canvas specifically for the right side -->
+                    <div id="hero-globe-container" class="position-absolute w-100 h-100 d-none d-md-block" style="z-index: 1; top: 0; left: 0;"></div>
+                    
+                    <!-- Profile Image with fade mask -->
+                    <div class="profile-image-container position-relative w-100 d-flex justify-content-center" style="z-index: 2; pointer-events: none;">
+                        <img src="./images/my_profile.png" alt="Naveed Malik" class="img-fluid" 
+                             style="max-height: 600px; -webkit-mask-image: linear-gradient(to top, transparent 5%, black 25%); mask-image: linear-gradient(to top, transparent 5%, black 25%); filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); position: relative; z-index: 2;">
+                        
+                        <!-- Floating Tech Icons positioned around the image -->
+                        <div class="position-absolute d-none d-md-block" style="top: 25%; left: 15%; z-index: 3;">
+                            <div class="floating-icon shadow-lg rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color); animation: float 4s ease-in-out infinite;">
+                                <i class="fab fa-react fa-lg" style="color: #61DAFB;"></i>
+                            </div>
+                        </div>
+                        <div class="position-absolute d-none d-md-block" style="top: 60%; left: 10%; z-index: 3;">
+                            <div class="floating-icon shadow-lg rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color); animation: float 5s ease-in-out infinite reverse;">
+                                <i class="fab fa-php fa-lg" style="color: var(--secondary-color);"></i>
+                            </div>
+                        </div>
+                        <div class="position-absolute d-none d-md-block" style="top: 65%; right: 10%; z-index: 3;">
+                            <div class="floating-icon shadow-lg rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px; background: var(--surface-color); backdrop-filter: var(--backdrop-blur); border: 1px solid var(--border-color); animation: float 6s ease-in-out infinite;">
+                                <i class="fab fa-node-js fa-lg" style="color: #68A063;"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -458,7 +469,7 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10 ">
                     <p class="text-justify"
-                        style='font-family: "Frank Ruhl Libre", serif; font-size: 4.4rem; font-weight: 300; line-height: 1.159; letter-spacing: -0.05rem; color: #000000;'>
+                        style='font-family: "Frank Ruhl Libre", serif; font-size: 4.4rem; font-weight: 300; line-height: 1.159; letter-spacing: -0.05rem; color: var(--text-color);'>
                         My passion and goal is to help you make your business standout.
                     </p>
                 </div>
@@ -782,6 +793,100 @@
                 </div>
             </div>
 
+            <!-- Project 7: LinkedIn -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/linkedin-scrapping.png" alt="LinkedIn Scraper"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">LinkedIn Connections Scraper</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            Automated extraction pipeline for LinkedIn networks for lead generation and analytics tracking.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: Pinterest -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/pinterest-scrapping.JPG" alt="Pinterest Scraper"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Pinterest Bot Manager</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            A custom autonomous tracking tool fetching trending pins, managing boards, and curating viral content autonomously.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9: Tagging -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/tagging.JPG" alt="Image Tagging System"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Smart Media Tagger</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            A sophisticated data organization system that implements automated bulk-tagging capabilities for large asset libraries.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10: Twitter Data -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/twitter_to_json.webp" alt="Twitter JSON"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Twitter JSON Pipeline</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            A highly optimized crawler that pipes raw Twitter firehose data natively into structured JSON schemas for ElasticSearch.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11: Shield Net -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <img src="./images/portfolio/shield.jpeg" alt="Shield Tool"
+                            class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Shield Integration Tool</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            Security implementation platform providing overarching authentication protections and active firewall monitoring.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="text-center mt-5" data-aos="fade-up">
@@ -799,129 +904,9 @@
         </div>
     </div>
 
-    <div class="container mb-5">
-        <!-- Automation 1 -->
-        <div class="row align-items-center mb-5 automation-feature" data-aos="fade-up">
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <div class="video-player-premium glass-card overflow-hidden position-relative p-2"
-                    style="border-radius: var(--border-radius-lg);">
-                    <video src="./videos/Connecting_Google_With_Account.mkv" class="w-100 rounded"
-                        style="border-radius: var(--border-radius-md);" muted loop controlslist="nodownload"></video>
-                    <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
-                        style="background: rgba(15, 23, 42, 0.4); pointer-events: none; transition: opacity 0.3s ease;">
-                        <button class="play-btn-premium btn btn-primary text-white rounded-circle shadow-lg"
-                            style="width: 60px; height: 60px; pointer-events: auto;"><i
-                                class="fas fa-play fa-lg ms-1"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 ps-lg-5">
-                <h4 class="fw-bold mb-3" style="color: var(--primary-color);">Automated Google Workspace Integration
-                </h4>
-                <p class="text-secondary small mb-4" style="color: var(--text-color) !important; opacity: 0.8;">A
-                    complete workflow automation for Google Account creation and multi-factor authentication handling.
-                </p>
-
-                <div class="workflow-stats d-flex gap-4 mb-4">
-                    <div>
-                        <span class="d-block small text-secondary">Before</span>
-                        <strong style="color: var(--text-color); opacity: 0.6; text-decoration: line-through;">Manual entry</strong>
-                    </div>
-                    <div><i class="fas fa-arrow-right mt-3" style="color: var(--text-color); opacity: 0.5;"></i></div>
-                    <div>
-                        <span class="d-block small text-secondary">After</span>
-                        <strong style="color: var(--secondary-color);">Zero-touch Auth</strong>
-                    </div>
-                </div>
-
-                <div class="impact-box p-3 rounded glass-card" style="border-left: 4px solid var(--primary-color);">
-                    <p class="mb-0 small fw-bold"><i class="fas fa-chart-line me-2 text-primary"></i>Business Impact</p>
-                    <p class="mb-0 small mt-1" style="color: var(--text-color); opacity: 0.9;">Eliminated 10+ hours per
-                        week of manual authentication across client portfolios.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Automation 2 -->
-        <div class="row align-items-center mb-5 automation-feature flex-lg-row-reverse" data-aos="fade-up">
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <div class="video-player-premium glass-card overflow-hidden position-relative p-2"
-                    style="border-radius: var(--border-radius-lg);">
-                    <video src="./videos/RealEstate_Scraper.mkv" class="w-100 rounded"
-                        style="border-radius: var(--border-radius-md);" muted loop controlslist="nodownload"></video>
-                    <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
-                        style="background: rgba(15, 23, 42, 0.4); pointer-events: none; transition: opacity 0.3s ease;">
-                        <button class="play-btn-premium btn btn-primary text-white rounded-circle shadow-lg"
-                            style="width: 60px; height: 60px; pointer-events: auto;"><i
-                                class="fas fa-play fa-lg ms-1"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 pe-lg-5">
-                <h4 class="fw-bold mb-3" style="color: var(--primary-color);">Real Estate Data Aggregator</h4>
-                <p class="text-secondary small mb-4" style="color: var(--text-color) !important; opacity: 0.8;">
-                    High-speed web scraper extracting verified property listings across multiple dynamic real estate
-                    portals.</p>
-
-                <div class="workflow-stats d-flex gap-4 mb-4">
-                    <div>
-                        <span class="d-block small text-secondary">Before</span>
-                        <strong style="color: var(--text-color); opacity: 0.6; text-decoration: line-through;">Incomplete Data</strong>
-                    </div>
-                    <div><i class="fas fa-arrow-right mt-3" style="color: var(--text-color); opacity: 0.5;"></i></div>
-                    <div>
-                        <span class="d-block small text-secondary">After</span>
-                        <strong style="color: var(--secondary-color);">10k+ Daily Rows</strong>
-                    </div>
-                </div>
-
-                <div class="impact-box p-3 rounded glass-card" style="border-left: 4px solid var(--primary-color);">
-                    <p class="mb-0 small fw-bold"><i class="fas fa-chart-line me-2 text-primary"></i>Business Impact</p>
-                    <p class="mb-0 small mt-1" style="color: var(--text-color); opacity: 0.9;">Yielded 3x more lead
-                        acquisition data for brokers at 1/10th of the previous cost.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Automation 3 -->
-        <div class="row align-items-center mb-5 automation-feature" data-aos="fade-up">
-            <div class="col-lg-7 mb-4 mb-lg-0">
-                <div class="video-player-premium glass-card overflow-hidden position-relative p-2"
-                    style="border-radius: var(--border-radius-lg);">
-                    <video src="./videos/Youtube_Channel_uploading.mkv" class="w-100 rounded"
-                        style="border-radius: var(--border-radius-md);" muted loop controlslist="nodownload"></video>
-                    <div class="video-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
-                        style="background: rgba(15, 23, 42, 0.4); pointer-events: none; transition: opacity 0.3s ease;">
-                        <button class="play-btn-premium btn btn-primary text-white rounded-circle shadow-lg"
-                            style="width: 60px; height: 60px; pointer-events: auto;"><i
-                                class="fas fa-play fa-lg ms-1"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 ps-lg-5">
-                <h4 class="fw-bold mb-3" style="color: var(--primary-color);">YouTube Bulk Uploader Pipeline</h4>
-                <p class="text-secondary small mb-4" style="color: var(--text-color) !important; opacity: 0.8;">
-                    Automated publishing pipeline that schedules, tags, and bulk-uploads media to channel arrays.</p>
-
-                <div class="workflow-stats d-flex gap-4 mb-4">
-                    <div>
-                        <span class="d-block small text-secondary">Before</span>
-                        <strong style="color: var(--text-color); opacity: 0.6; text-decoration: line-through;">15 mins/video</strong>
-                    </div>
-                    <div><i class="fas fa-arrow-right mt-3" style="color: var(--text-color); opacity: 0.5;"></i></div>
-                    <div>
-                        <span class="d-block small text-secondary">After</span>
-                        <strong style="color: var(--secondary-color);">Fully Autonomous</strong>
-                    </div>
-                </div>
-
-                <div class="impact-box p-3 rounded glass-card" style="border-left: 4px solid var(--primary-color);">
-                    <p class="mb-0 small fw-bold"><i class="fas fa-chart-line me-2 text-primary"></i>Business Impact</p>
-                    <p class="mb-0 small mt-1" style="color: var(--text-color); opacity: 0.9;">Allowed content creators
-                        to scale channel networks without hiring additional dedicated uploaders.</p>
-                </div>
-            </div>
-        </div>
+    <div class="container mb-5" id="automations-container">
+        <!-- Automation videos will be injected dynamically here by automation_script.js -->
+    </div>
 
         <div class="text-center mt-4">
             <a href="https://github.com/navidmalik" target="_blank" class="btn btn-outline border-2 px-5 py-2 fw-bold"
@@ -1192,7 +1177,7 @@
 
             <div class="fiverr-cta" data-aos="fade-up">
                 <p>Want to work with me?</p>
-                <a href="YOUR_FIVERR_PROFILE_URL" target="_blank" class="fiverr-btn">
+                <a href="https://www.fiverr.com/s/381LzNk" target="_blank" class="fiverr-btn">
                     <i class="fas fa-external-link-alt"></i> View My Fiverr Profile
                 </a>
             </div>
@@ -1295,21 +1280,22 @@
     <script src="./fiverr_reviews_script.js"></script>
 
     <script>
-        // Initialize Three.js Scene for Hero Section
+        // Initialize Three.js Scene for Hero Section (Right Side Globe)
         function initThreeJS() {
-            const container = document.getElementById('canvas-container');
+            const container = document.getElementById('hero-globe-container');
             if (!container || window.innerWidth <= 768) return; // Disable on mobile for performance
 
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            // Match camera to the actual container size instead of full screen
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
 
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(container.clientWidth, container.clientHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel density
             container.appendChild(renderer.domElement);
 
             // Wireframe Globe
-            const geometry = new THREE.IcosahedronGeometry(4, 2);
+            const geometry = new THREE.IcosahedronGeometry(4, 3);
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
             const wireColor = isDark ? 0x4F46E5 : 0x0EA5E9;
 
@@ -1321,11 +1307,12 @@
             });
 
             const globe = new THREE.Mesh(geometry, material);
-            globe.position.x = window.innerWidth > 992 ? 3 : 0;
+            // Center in local container
+            globe.position.x = 0;
             scene.add(globe);
 
             // Inner Core
-            const coreGeometry = new THREE.IcosahedronGeometry(3.5, 1);
+            const coreGeometry = new THREE.IcosahedronGeometry(3.5, 2);
             const coreMaterial = new THREE.MeshBasicMaterial({
                 color: wireColor,
                 wireframe: true,
@@ -1333,10 +1320,10 @@
                 opacity: 0.05
             });
             const core = new THREE.Mesh(coreGeometry, coreMaterial);
-            core.position.x = window.innerWidth > 992 ? 3 : 0;
+            core.position.x = 0;
             scene.add(core);
 
-            camera.position.z = 8;
+            camera.position.z = 7; // Pull back to fit the globe nicely in the half-screen cell
 
             let mouseX = 0;
             let mouseY = 0;
@@ -1351,11 +1338,9 @@
                     container.innerHTML = '';
                     return;
                 }
-                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.aspect = container.clientWidth / container.clientHeight;
                 camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                globe.position.x = window.innerWidth > 992 ? 3 : 0;
-                core.position.x = window.innerWidth > 992 ? 3 : 0;
+                renderer.setSize(container.clientWidth, container.clientHeight);
             }, { passive: true });
 
             const animate = () => {
@@ -1366,8 +1351,8 @@
                 core.rotation.y -= 0.001;
 
                 // Gentle Mouse Interaction (Parallax)
-                camera.position.x += (mouseX - camera.position.x) * 0.05;
-                camera.position.y += (mouseY - camera.position.y) * 0.05;
+                camera.position.x += (mouseX - camera.position.x) * 0.5;
+                camera.position.y += (mouseY - camera.position.y) * 0.5;
                 camera.lookAt(scene.position);
 
                 renderer.render(scene, camera);
@@ -1472,6 +1457,64 @@
                 });
             });
         });
+        
+        // Typing Animation for Hero Section
+        const heroTexts = [
+            "Naveed Malik",
+            "Web Developer",
+            "Mobile App Developer",
+            "React Js Developer",
+            "PHP Developer",
+            "Full Stack Developer"
+        ];
+        const typeSpeed = 100;
+        const delSpeed = 50;
+        const pauseTime = 1500;
+        
+        function startTyping() {
+            const container = document.getElementById('typing-container');
+            if(!container) return;
+            let i = 0;
+            
+            function type(text, cb) {
+                let j = 0;
+                container.innerHTML = '';
+                function step() {
+                    if (j < text.length) {
+                        container.innerHTML += text[j++];
+                        setTimeout(step, typeSpeed);
+                    } else {
+                        setTimeout(cb, pauseTime);
+                    }
+                }
+                step();
+            }
+            
+            function deleteTxt(cb) {
+                let text = container.innerHTML;
+                let j = text.length;
+                function step() {
+                    if (j > 0) {
+                        container.innerHTML = text.substring(0, --j);
+                        setTimeout(step, delSpeed);
+                    } else {
+                        setTimeout(cb, 500);
+                    }
+                }
+                step();
+            }
+            
+            function loop() {
+                type(heroTexts[i], () => {
+                    deleteTxt(() => {
+                        i = (i + 1) % heroTexts.length;
+                        loop();
+                    });
+                });
+            }
+            loop();
+        }
+        document.addEventListener("DOMContentLoaded", startTyping);
     </script>
 </body>
 
