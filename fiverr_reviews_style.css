@@ -5,6 +5,11 @@
   position: relative;
 }
 
+.fiverr-reviews-section .section-heading,
+.fiverr-reviews-section .section-subheading {
+  color: #000000 !important;
+}
+
 .fiverr-reviews-section::before {
   content: "";
   position: absolute;
