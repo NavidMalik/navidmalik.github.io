@@ -1,4 +1,6 @@
 const automations = [
+  { video: "AI_Receptionist_Urdu.mp4", title: "Sara — Bilingual AI Voice Receptionist", desc: "Real-time English / Urdu / Roman-Urdu voice agent that answers the call and books a hospital appointment end-to-end." },
+  { video: "Appointment_Booking_PhoneCall.mkv", title: "Sara — Appointment Booking Phone Call", desc: "Full inbound phone-call flow: name, phone, symptoms, doctor recommendation, date and time, confirmed and written to the database." },
   { video: "Connecting_Google_With_Account_!.mkv", title: "Automated Google Workspace Integration", desc: "A complete workflow automation for Google Account creation and multi-factor authentication handling." },
   { video: "Form_filling_pdf.mkv", title: "Automated PDF Form Filler", desc: "Extracting data and autonomously pushing it into complex PDF schemas." },
   { video: "GoogleTwoFactor.mkv", title: "Advanced Google 2FA Handler", desc: "Automated bypass and handling of Google's 2FA systems during robotic log-ins." },

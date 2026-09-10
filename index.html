@@ -830,8 +830,51 @@
                 </div>
             </div>
 
-            <!-- Project 8: Kommete (Oraan) -->
+            <!-- Project 8: Sara AI Voice Receptionist -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
+                    data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="project-img-wrapper position-relative overflow-hidden">
+                        <video src="./videos/AI_Receptionist_Urdu.mp4" class="img-fluid w-100 object-fit-cover"
+                            style="height: 220px;" autoplay muted loop playsinline controlslist="nodownload"></video>
+                        <div class="position-absolute top-0 end-0 m-2">
+                            <span class="badge"
+                                style="background: linear-gradient(90deg, #7C3AED, #4F46E5); font-size: 0.7rem;">Voice AI</span>
+                        </div>
+                    </div>
+                    <div class="project-info p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Sara — Bilingual AI Voice Receptionist</h5>
+                        <div class="project-story small mb-3 flex-grow-1"
+                            style="color: var(--text-color); opacity: 0.9; line-height: 1.5;">
+                            <div class="mb-2"><strong>Problem:</strong> Hospital front desks miss calls and can't handle
+                                appointment booking around the clock or in multiple languages.</div>
+                            <div class="mb-2"><strong>Solution:</strong> Built Sara, a real-time English / Urdu / Roman-Urdu
+                                voice agent that takes a call and books a doctor's appointment end-to-end (name → phone →
+                                symptoms → doctor → date → time → confirm), writing it straight to the database.</div>
+                            <div class="fw-bold" style="color: var(--secondary-color);">Impact: Sub-second perceived
+                                latency via speculative STT, sentence-level TTS streaming and a no-LLM fast path — with
+                                live doctor availability, fee reminders and WhatsApp confirmations.</div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge border" style="color: var(--text-color);">Whisper STT</span>
+                            <span class="badge border" style="color: var(--text-color);">LLM Agent</span>
+                            <span class="badge border" style="color: var(--text-color);">Edge-TTS</span>
+                            <span class="badge border" style="color: var(--text-color);">Twilio</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="#" class="btn btn-primary btn-sm flex-grow-1 fw-bold"
+                                onclick="openVideoModal([{label:'Urdu (Web Demo)',src:'./videos/AI_Receptionist_Urdu.mp4'},{label:'English (Phone Call)',src:'./videos/Appointment_Booking_PhoneCall.mkv'}]); return false;">
+                                <i class="fas fa-play me-1"></i> Watch Demo</a>
+                            <a href="#" class="btn btn-outline border-2 btn-sm flex-grow-1 fw-bold disabled"
+                                style="color: var(--text-color); border-color: var(--border-color);"><i
+                                    class="fas fa-lock"></i> Private</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9: Kommete (Oraan) -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-card rounded overflow-hidden h-100 d-flex flex-column glass-card" data-tilt
                     data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
                     <div class="project-img-wrapper position-relative overflow-hidden">
@@ -1108,9 +1151,66 @@
     <div id="videoModal" class="video-modal">
         <span class="close-modal">&times;</span>
         <div class="modal-content">
+            <div id="videoModalTabs" class="d-flex justify-content-center gap-2 mb-3 flex-wrap"></div>
             <video id="modalVideo" controls></video>
         </div>
     </div>
+    <script>
+        (function () {
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const tabsWrap = document.getElementById('videoModalTabs');
+            if (!modal || !modalVideo) return;
+
+            function playSrc(src) {
+                modalVideo.src = src;
+                modalVideo.load();
+                const p = modalVideo.play();
+                if (p && p.catch) p.catch(() => { });
+            }
+
+            // Accepts a single src string, or an array of { label, src } for a language switcher.
+            window.openVideoModal = function (input) {
+                const items = typeof input === 'string' ? [{ label: '', src: input }] : input;
+                tabsWrap.innerHTML = '';
+                if (items.length > 1) {
+                    items.forEach((item, i) => {
+                        const btn = document.createElement('button');
+                        btn.className = 'btn btn-sm fw-bold ' + (i === 0 ? 'btn-primary' : 'btn-outline border-2');
+                        btn.style.color = i === 0 ? '' : 'var(--text-color)';
+                        btn.textContent = item.label;
+                        btn.addEventListener('click', () => {
+                            [...tabsWrap.children].forEach(c => {
+                                c.className = 'btn btn-sm fw-bold btn-outline border-2';
+                                c.style.color = 'var(--text-color)';
+                            });
+                            btn.className = 'btn btn-sm fw-bold btn-primary';
+                            btn.style.color = '';
+                            playSrc(item.src);
+                        });
+                        tabsWrap.appendChild(btn);
+                    });
+                }
+                modal.classList.add('show');
+                playSrc(items[0].src);
+            };
+
+            function closeVideoModal() {
+                modal.classList.remove('show');
+                modalVideo.pause();
+                modalVideo.removeAttribute('src');
+                modalVideo.load();
+            }
+
+            modal.querySelector('.close-modal').addEventListener('click', closeVideoModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeVideoModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('show')) closeVideoModal();
+            });
+        })();
+    </script>
 
     <!-- Testimonials Section -->
     <section class="py-5 bg-base" style="background-color: var(--bg-color);">
