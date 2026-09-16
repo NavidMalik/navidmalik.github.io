@@ -48,7 +48,7 @@
                                 class="anchor_tags">navidml6453@gmail.com</a>
                         </div>
                         <div style="color:#767776"><a href="https://wa.link/rymhg3" class="anchor_tags"
-                                target="_blank">+974 31533910</a>
+                                target="_blank">+974 92681462</a>
                         </div>
                         <div style="color:#767776"><a href="https://wa.link/i3g8v9" class="anchor_tags"
                                 target="_blank">+92 337 8277733</a>
